@@ -1,0 +1,11 @@
+body{
+    width: 70%;
+    background: #fcf8e3;
+}
+canvas{
+    border: solid 1px;    
+    
+}
+.herramientas{
+    width: 100px;
+}

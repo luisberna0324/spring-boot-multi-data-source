@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>VERIFICACION DATOS LICENCIA</title>
+        <link rel="icon" href="./img/favicon.ico">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Soltelec s.a.s">
+        <meta name="keywords" content="moto,carro,pesado,liviano,">
+        <link rel="stylesheet" href="./css/RegCertificacionLicencia.css">
+        <link rel="stylesheet" href="./css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+    </head>
+    <body>
+        <header class="navbar-header navbar-fixed-top" id="cabeceraPag">
+            <div class="pull-left">
+                <ul>
+                    <li><a href="#">&nbsp;</a><i class="fa fa-mail-reply fa-2x" title="Retorno al Menu" onclick="returnMenuMain();"></i></li>
+                </ul>
+            </div>
+            <div class="pull-right">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="label"><a style="color: #DCDCDC;" href="#" id="nombreUsuario"></a></li>
+                    <li><img class="img-circle img-responsive pull-right"  src="./img/user.png" alt="./fonts/user.png" style="margin-right: 40px; height: 50px; width: 45px; margin-top: 10px;" id="fotoUsuario"></li>
+                </ul>
+            </div>
+            <h4 class="text-center" ><strong>VERIFICACION DE DATOS DE LA TARJETA DE PROPIEDAD</strong></h4>
+        </header>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="ContenedorPrincipal">
+                    <form id="formRegistroRunt">
+                        <div class="col-xs-12 col-md-12 col-lg-12">
+                            <div class="pull-left"><img src="./img/Escudo.png" alt="./fonts/user.png" style="margin-right: 40px; height: 100px; width: 75px; margin-top: 20px;"></div>
+                            <h1 class="text-center"><strong>REPUBLICA DE COLOMBIA</strong></h1>
+                            <h4 class="text-center"><strong>MINISTERIO DE TRANSPORTE</strong></h4>
+                            <h3 class="pull-left"><strong>LICENCIA DE TRANSITO No.</strong></h3>
+                            <img class="img-circle img-responsive pull-right"  src="./img/imgMinisterioTransporte.png" alt="./fonts/imgMinisterioTransporte.png" style="margin-right: 40px; height: 160px; width: 135px; margin-top: -115px;">
+                            <h3 id="txtNroLicencia" class="pull-right"><input id="nroLicencia" class="form-control" style="width: 70%;" type="text" placeholder="Nro. Licencia" onkeypress="return beta(event)"> </h3>
+                        </div>
+                        <table class="table-responsive " width="100%">
+                            <th><label class="control-label" for="placa"><strong>PLACA</strong></label></th>
+                            <th><label class="control-label" for="marca"><strong>MARCA</strong></label></th>
+                            <th><label class="control-label" for="linea"><strong>LINEA</strong></label></th>
+                            <th></th>
+                            <th><label class="control-label" for="modelo"><strong>MODELO</strong></label></th>
+                            <tr>
+                                <td><input id="placa" disabled  placeholder="Placa" class="form-control text-uppercase" style="width: 40%;" type="text"  maxlength="8"></td>
+                                <td><input id="marca" class="form-control" style="width: 70%;" type="text" placeholder="Marca"></td>
+                                <td><input id="linea" class="form-control" style="width: 60%;" type="text" placeholder="Linea"></td>
+                                <td></td>
+                                <td><input id="modelo" class="form-control" style="width: 50%;" type="text" placeholder="Modelo" onkeypress="return beta(event)"></td>
+                            </tr>
+                            <th><label class="control-label" for=""><strong>CILINDRADA CC</strong></label></th>
+                            <th><label class="control-label" for=""><strong>COLOR</strong></label></th>
+                            <th></th><th></th>
+                            <th><label class="control-label" for=""><strong>SERVICIO</strong></label></th>
+                            <tr>
+                                <td><input id="cilindrada"  class="form-control" style="width: 50%;" type="text" placeholder="Cilindrada" onkeypress="return beta(event)"></td>
+                                <td><input id="color"   class="form-control" style="width: 100%;" type="text" placeholder="Color"></td>
+                                <td></td><td></td>
+                                <td><input id="servicio"  class="form-control" style="width: 100%;" type="text" placeholder="Servicio"></td>
+                            </tr>
+                            <th><label class="control-label" for="clase de vehiculo"><strong>CLASE DE VEHICULO</strong></label></th>
+                            <th><label class="control-label" for="carroceria"><strong>TIPO DE CARROCERIA</strong></label></th>
+                            <th><label class="control-label" for="combustible"><strong>COMBUSTIBLE</strong></label></th>
+                            <th></th>
+                            <th><label class="control-label" for="combustible"><strong>CAPACIDAD Kg/PSJ</strong></label></th>
+                            <tr>
+                                <td><input id="claseVehiculo" class="form-control" style="width: 80%;" type="text" placeholder="Clase de Vehiculo"></td>
+                                <td><input id="tipoCarroceria" class="form-control" style="width: 80%;" type="text" placeholder="Tipo de Carroceria"></td>
+                                <td>
+                                    <select id="combustible" class="form-control" name="" style="width: 75%">
+                                        <option value="GASOLINA">GASOLINA</option>								               
+                                        <option value="GAS NATURAL VEHICULAR">GAS NATURAL
+                                            VEHICULAR</option>
+                                        <option value="DIESEL">DIESEL</option>
+                                        <option value="GAS - GASOLINA">GAS - GASOLINA</option>
+                                        <option value="GPL">GPL</option>
+                                    </select>
+                                </td>
+                                <td></td>
+                                <td><input id="capacidad" class="form-control" style="width: 80%;" type="text" placeholder="Capacidad Kg/PSJ"  onkeypress="return beta(event)" ></td>
+                            </tr>
+                            <th><label class="control-label" for="nromotor"><strong>NUMERO DE MOTOR</strong></label></th>
+                            <th></th>
+                            <th><label class="control-label" for="nromotor"><strong>VIN</strong></label></th>
+                            <th></th>
+                            <th>FECHA MATRICULA</th>
+                            <tr>
+                                <td><input id="nroMotor" class="form-control" style="width: 100%;" type="text" placeholder="Nro de Motor"></td>
+                                <td></td>
+                                <td><input id="vin" class="form-control" style="width: 100%;" type="text" placeholder="Nro. Vin"></td>
+                                <td></td>
+                                <td><input class="form-control"  type="date" id="txtFechaMatricula"></td>
+                            </tr>
+                            <th><label class="control-label" for="nroserie"><strong>NUMERO DE SERIE</strong></label></th>
+                            <th></th>
+                            <th><label class="control-label" for="nrochasis"><strong>NUMERO DE CHASIS</strong></label></th>
+                            <th></th>
+                          <!--  <th><label class="control-label" for="fechaexplictto"><strong>FECHA EXP.LIC.TTO</strong></label></th></th>-->
+                            <tr>
+                                <td><input id="nroSerie" class="form-control" style="width: 100%;" type="text" placeholder="Nro de Serie"></td>
+                                <td></td>
+                                <td><input id="nroChasis" class="form-control" style="width: 100%;" type="text" placeholder="Nro de Chasis"></td>
+                                <td></td>
+                               <!--  <td><input class="form-control"  type="date" id="txtFechaExpLicTto"></td>-->
+                            </tr>
+                            <th><label class="control-label"><strong>IDENTIFICACION</strong></label></th>
+                            <th></th>
+                            <th><label class="control-label"><strong>PROPIETARIO:APELLIDO(S)Y NOMBRE(S)</strong></label></th>
+                            <th></th>
+                            <th></th>
+                            <tr>
+                                <td><input id="cedulaPropietario" class="form-control" style="width: 80%;" type="text" onchange="serFindPropietario();" onblur="serFindPropietario();" placeholder="Identificacion ....!"></td>
+                                <td></td>
+                                <td><input id="apellidoPropietario" class="form-control" style="width: 100%;" type="text" placeholder="Apellido Propietario"></td>
+                                <td><input id="nombrePropietario" class="form-control" style="width: 100%;" type="text" placeholder="Nombre Propietario"></td>
+                            </tr>
+                        </table>
+                        <br><br>
+                        <input id="fkRevision" class="form-control" style="width: 100%;" type="hidden" >
+                    </form>
+                    <div class="col-xs-12 col-md-12 col-lg-12 text-center"><input class="btn btn-lg btn-primary"  type="button" onclick="registrarDatosPrerevision();" value="GUARDAR"></div>
+                    <br><br>
+                    <br><br>
+                </div>
+            </div>
+        </div>    
+        <footer class="navbar navbar-fixed-bottom">
+            <span class="pull-left"><img id="logoEmpresa" src="./img/Soltelec.png" alt="" class="img-rounded" style="width:90px;height:53px;margin-left:25px;margin-top:5px;"/></span>
+            <p class="text-center">Copyright <i class="fa fa-copyright"></i> 2018 Soltelec sas </p>
+        </footer>
+        <script src="./js/AHAHlib2.js"></script>
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/eModal.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/RegCertificacionLicencia.js"></script>
+    </body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="./img/favicon.ico">
+        <title>ORDEN DE PRE-REVISION</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="refresh" CONTENT="60">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/OrdenPreRevision.css" type="text/css"/>
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="stylesheet" href="./css/bootstrap.css" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header class="navbar-header navbar-fixed-top">
+            <span class="pull-left"><img id="logoEmpresa" src="./img/Soltelec.png" alt="./img/logoCDA.JPG" class="img-rounded"/></span>
+            <div class="nav navbar-nav navbar-right">
+                <div class="label" style="color:#DCDCDC;" id="nombreUsuario"></div>
+                <img id="fotoUsuario" class="img-circle img-responsive pull-right" src="./img/user.png" alt="./img/user.png">
+            </div>
+            <div class="pull-left"><a href="#" onclick="menuPrincipal();"><i class="fa fa-mail-reply fa-2x" title="Retorno al Menu"></i></a></div>
+            <div class="cabecera text-center"><h4><strong>PRE-REVISION AUTORIZADA</strong></h4></div>    
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm12 col-md-12 col-lg-12" id="ContenedorPrincipal"> 
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 espacios"></div>
+                    <table id="OrdenPreRevision" class="table-responsive " width="100%" border="1">
+                        <thead>
+                        <th style="width: 2%;">TURNO</th>
+                        <th style="width: 10%;">PLACA</th>
+                        <th style="width: 33%;">PROPIETARIO</th>
+                        <th style="width: 10%;">TIPO-VEHICULO</th>
+                        <th style="width: 10%;">TIPO-REVISION</th>
+                        <th style="width: 10%;">CONDICION</th>
+                        <th style="width: 7%;">PLANILLA</th>
+                        <th style="width: 5%;">HORA</th>
+                        <th style="width: 7%;">ANULAR</th>
+                        <th style="width: 6%;">TRANSMITIR</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="turno1"></td>
+                                <td id="td1"></td>
+                                <td id="propietario1"></td>
+                                <td id="tipoVehiculo1"></td>
+                                <td id="tipoRevision1"></td>
+                                <td id="condicion1"></td>
+                                <td id="anularPlanilla1"><a id="planilla1" href=""  onclick="doPlanilla(document.getElementById('planilla1'), event);"></a></td>
+                                <td id="hora1"></td>
+                                <td id="anular1" data-toggle="modal" onclick="doAnulacion(1);"></td>
+                                <td> <a id="irPreRevision1"  href=""  onclick="doPreRevision(document.getElementById('irPreRevision1'), event);" > </a> </td>
+                            </tr>
+                            <tr>
+                                <td id="turno2"></td>
+                                <td id="td2" ></td>
+                                <td id="propietario2"></td>
+                                <td id="tipoVehiculo2"></td>
+                                <td id="tipoRevision2"></td>
+                                <td id="condicion2"></td>
+                                <td id="anularPlanilla2"><a id="planilla2" href=""  onclick="doPlanilla(document.getElementById('planilla2'), event);"> </a></td>
+                                <td id="hora2"></td>
+                                <td><a id="anular2" href="#modalanular2" data-toggle="modal" onclick="doAnulacion(2);" ></a></td>
+                                <td><a id="irPreRevision2" href="" onclick="doPreRevision(document.getElementById('irPreRevision2'), event);"></a></td>
+                            </tr>
+                            <tr>
+                                <td id="turno3"></td>
+                                <td id="td3" ></td>
+                                <td id="propietario3"></td>
+                                <td id="tipoVehiculo3"></td>
+                                <td id="tipoRevision3"></td>
+                                <td id="condicion3"></td>
+                                <td id="anularPlanilla3"><a id="planilla3" href=""  onclick="doPlanilla(document.getElementById('planilla3'), event);"> </a> </td>
+                                <td id="hora3"></td>
+                                <td><a id="anular3"  href="#modalanular3" data-toggle="modal" onclick="doAnulacion(3);" ></a></td>
+                                <td><a id="irPreRevision3" href="#" onclick="doPreRevision(document.getElementById('irPreRevision3'), event);"> </a></td>
+                            </tr>
+                            <tr>
+                                <td id="turno4"></td>
+                                <td id="td4" ></td>
+                                <td id="propietario4"></td>
+                                <td id="tipoVehiculo4"></td>
+                                <td id="tipoRevision4"></td>
+                                <td id="condicion4"></td>
+                                <td id="anularPlanilla4"><a id="planilla4" href=""  onclick="doPlanilla(document.getElementById('planilla4'), event);"> </a> </td>
+                                <td id="hora4"></td>
+                                <td><a id="anular4" href="#modalanular4"  data-toggle="modal" onclick="doAnulacion(4);"></a></td>
+                                <td><a id="irPreRevision4" href="#" onclick="doPreRevision(document.getElementById('irPreRevision4'), event);"> </a></td>
+                            </tr>
+                            <tr>
+                                <td id="turno5"></td>
+                                <td id="td5" ></td>
+                                <td id="propietario5"></td>
+                                <td id="tipoVehiculo5"></td>
+                                <td id="tipoRevision5"></td>
+                                <td id="condicion5"></td>
+                                <td id="anularPlanilla5"><a id="planilla5" href=""  onclick="doPlanilla(document.getElementById('planilla5'), event);"></a></td>
+                                <td id="hora5"></td>
+                                <td><a  id="anular5" href="#modalanular5"  data-toggle="modal" onclick="doAnulacion(5);"></a></td>
+                                <td><a id="irPreRevision5" href="" onclick="doPreRevision(document.getElementById('irPreRevision5'), event);"></a></td>
+                            </tr>
+                            <tr>
+                                <td id="turno6"></td>
+                                <td id="td6" ></td>
+                                <td id="propietario6"></td>
+                                <td id="tipoVehiculo6"></td>
+                                <td id="tipoRevision6"></td>
+                                <td id="condicion6"></td>
+                                <td id="anularPlanilla6"><a id="planilla6" href=""  onclick="doPlanilla(document.getElementById('planilla6'), event);"></a></td>
+                                <td id="hora6"></td>
+                                <td><a id="anular6" href="#modalanular6"  data-toggle="modal" onclick="doAnulacion(6);"></a></td>
+                                <td > <a id="irPreRevision6" href="" onclick="doPreRevision(document.getElementById('irPreRevision6'), event);"></a></td>
+                            </tr>
+                            <tr>
+                                <td id="turno7"></td>
+                                <td id="td7" ></td>
+                                <td id="propietario7"></td>
+                                <td id="tipoVehiculo7"></td>
+                                <td id="tipoRevision7"></td>
+                                <td id="condicion7"></td>
+                                <td id="anularPlanilla7"><a id="planilla7" href=""  onclick="doPlanilla(document.getElementById('planilla7'), event);"> </a> </td>
+                                <td id="hora7"></td>
+                                <td><a id="anular7" href="#modalanular7"  data-toggle="modal"  onclick="doAnulacion(7);" ></a></td>
+                                <td><a id="irPreRevision7" href="" onclick="doPreRevision(document.getElementById('irPreRevision7'), event);"></a></td>
+                            </tr>
+                            <tr>
+                                <td id="turno8"></td>
+                                <td id="td8" ></td>
+                                <td id="propietario8"></td>
+                                <td id="tipoVehiculo8"></td>
+                                <td id="tipoRevision8"></td>
+                                <td id="condicion8"></td>
+                                <td id="anularPlanilla8"><a id="planilla8" href=""  onclick="doPlanilla(document.getElementById('planilla8'), event);"></a></td>
+                                <td id="hora8"></td>
+                                <td><a  id="anular8" href="#modalanular8"  data-toggle="modal"  onclick="doAnulacion(8);"></a></td>
+                                <td><a id="irPreRevision8" href="" onclick="doPreRevision(document.getElementById('irPreRevision8'), event);"></a></td>
+                            </tr>
+                            <tr>
+                                <td id="turno9"></td>
+                                <td id="td9" ></td>
+                                <td id="propietario9"></td>
+                                <td id="tipoVehiculo9"></td>
+                                <td id="tipoRevision9"></td>
+                                <td id="condicion9"></td>
+                                <td id="anularPlanilla9"><a id="planilla9" href=""  onclick="doPlanilla(document.getElementById('planilla9'), event);"> </a> </td>
+                                <td id="hora9"></td>
+                                <td><a id="anular9" href="#modalanular5"  data-toggle="modal"  onclick="doAnulacion(9);"></a></td>
+                                <td><a id="irPreRevision9" href="" onclick="doPreRevision(document.getElementById('irPreRevision9'), event);"></a></td>
+                            </tr>
+                            <tr>
+                                <td id="turno10"></td>
+                                <td id="td10" ></td>
+                                <td id="propietario10"></td>
+                                <td id="tipoVehiculo10"></td>
+                                <td id="tipoRevision10"></td>
+                                <td id="condicion10"></td>
+                                <td id="anularPlanilla10"><a id="planilla10" href=""  onclick="doPlanilla(document.getElementById('planilla10'), event);"> </a> </td>
+                                <td id="hora10"></td>
+                                <td><a id="anular10" href="#modalanular10"  data-toggle="modal"  onclick="doAnulacion(10);" ></a></td>
+                                <td><a id="irPreRevision10" href="" onclick="doPreRevision(document.getElementById('irPreRevision10'), event);"> </a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 espacios">
+                    <div class="container" id="estilomodal">
+                        <div  class="modal fade" id="modalanular">
+                            <div  class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <div class="modal-title text-center"><h4><strong>ANULACION DE LA PLACA INGRESADA</strong></h4></div>
+                                    </div>       
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <h4 id="tituloAnulacion"><strong>Especifique la razon para Anular la Placa :</strong></h4>
+                                            <textarea class="form-control small text-uppercase" id="descripcionAnulacion"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button"  class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="servAnulacion()" >GUARDAR ANULACION</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                    
+                </div>
+            </div>
+        </div>
+        <form id="findPlaca" action="./ServicioProducto.do" method="post" enctype="application/x-www-form-urlencoded">
+			 <input type="hidden" id="data" name="data" value=""> 
+             <input type="hidden" id="entidad" name="entidad" value="">
+         </form>
+        <input type="hidden" id="identificador" value="" required>
+        <footer class="navbar navbar-fixed-bottom">
+            <span class="pull-left"><img id="logoCDA" src="./img/logoCDA.JPG" alt="" class="img-rounded"/></span>
+            <p class="text-center">Copyright <i class="fa fa-copyright"></i> 2018 Soltelec sas </p>
+        </footer>
+        <script src="./js/AHAHlib2.js"></script>
+        <script src="./js/jquery.js"></script>
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/eModal.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/ie10-viewport-bug-workaround.js"></script>
+        <script src="./js/OrdenPreRevision.js"></script>
+    </body>
+</html>

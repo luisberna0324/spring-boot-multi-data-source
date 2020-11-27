@@ -1,0 +1,108 @@
+/* 
+    Created on : Jul 7, 2017, 10:48:41 AM
+    Author     : Soporte@soltelec.com
+*/
+body {
+    margin: 0;
+}
+#ContenedorPrincipal{
+     width: 90%;
+     margin-top: 20px;
+     height: 325px;
+     background:#CCC;
+     border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -moz-border-radius:10px 10px 10px 10px; 
+    -o-border-radius:10px 10px 10px 10px;
+     box-shadow:1px 1px 1px 1px;
+    -webkit-box-shadow:1px 1px 1px 1px;
+    -o-box-shadow:1px 1px 1px 1px;
+    -moz-box-shadow:1px 1px 1px 1px; 
+ } 
+h2{
+    color:#fff; 
+}
+#cabeceraPag{
+    background: #003333;
+     border-radius: 10px 10px 0px 0px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    -moz-border-radius:10px 10px 0px 0px; 
+    -o-border-radius:10px 10px 0px 0px;
+}
+#placaRecepcion{
+  margin-top:-35;
+}
+canvas {
+  display: block;
+  margin: 0 auto;  
+  background: $canvas-bg;
+  border-radius: 3px;
+  box-shadow: 0px 0px 15px 3px #ccc;
+  cursor:pointer;
+  background: #FFF;
+}
+#contenedorMoto{
+   width: 85%;
+   height: 85%;
+   margin-top: -30px;
+   margin-left: 70px;
+   margin-bottom: -45px;
+}
+.mark{
+  background:#ff0;// La clase mark hace posible el resaltado amarillo 
+}
+
+.ctxMiga{
+   font-weight: bold;
+   border-bottom: solid 1px; 
+   border-top: solid 1px; 
+}
+.errorT{
+  background:red;// La clase errorT indica error 
+}
+.center{
+  position: static;
+  margin: 0;
+  border: 0;
+  top: 70%;
+  left:50%;
+  transform: translate (-50%,-50%);
+}
+input[type="checkbox"]{
+    position: relative;
+    width: 80px;
+    height: 40px;
+    -webkit-appearance: none;
+    background: #e5e5e5;
+    outline: none;
+    box-shadow: inset 0 3px 10px rgba(0,0,0,.3);
+    border-radius: 20px;
+}
+input:checked[type="checkbox"]{
+    background: #03a9f4;
+}
+input[type="checkbox"]:before{
+    content: '';
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    top:0;
+    left: 0;
+    background: linear-gradient(#fff,#f2f2f2);
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+    transform: scale (1.1);
+   
+}
+input:checked[type="checkbox"]:before{
+    left: 40px;
+}
+footer{
+    width: 100%;
+    height: 40px;
+    background: #003333;
+}
+footer p {
+    color: #fff;
+    padding-top: 10px;
+}

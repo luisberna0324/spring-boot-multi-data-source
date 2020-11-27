@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registro Manual Pre-Revision</title>
+<link rel="icon" href="./img/favicon.ico">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Soltelec s.a.s">
+<meta name="keywords" content="moto,carro,pesado,liviano,">
+<link rel="stylesheet" href="./css/RegistroManualRunt.css">
+<link rel="stylesheet" href="./css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+</head>
+<body>
+	<header class="navbar-header navbar-fixed-top" id="cabeceraPag">		
+		<div class="pull-left">
+			<ul>
+				<li><a href="#" >&nbsp;<i class="fa fa-save fa-2x" title="" onclick="registroUpdateDatos();"></i></a></li>
+			</ul>
+		</div>
+		<div class="pull-right">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="label"><a style="color: #DCDCDC;" href="#"
+					id="nombreUsuario"></a></li>
+				<li><img class="img-circle img-responsive pull-right" src="./img/user.png" alt="./fonts/user.png" style="margin-right: 40px; height: 50px; width: 45px; margin-top: 10px;" 	id="fotoUsuario"></li>
+			</ul>
+		</div>
+	</header>
+	<br>
+	<br>
+	<br>
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="ContenedorPrincipal">			
+			<form id="formRegistroConductor">
+				<div class="col-xs-12 col-md-12 col-lg-12 espacio"></div>				
+				<div class="col-xs-12 col-md-12 col-lg-12 espacio"></div>				
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 cabecera">
+				<div id="placaRecepcion" class="pull-left"></div>
+					<h4 class="text-center">
+						<strong>INGRESE LOS SIGUIENTES DATOS DEL CONDUCTOR</strong>
+					</h4>
+				</div>
+				 <br>
+				<div class="col-xs-12 col-md-12 col-lg-12 espacio"></div>
+				<table class="table-responsive " width="100%">
+					<tr>
+						<td><label class="control-label" for="Identificacion">DOCUMENTO:</label></td>
+						<td><select id="typIndent" class="form-control" name="" style="width: 75%">
+								<option value="C">Cédula Ciudadania</option>
+								<option value="E">Cédula de Extranjeria</option>
+								<option value="N">NIT</option>
+								<option value="P">Pasaporte</option>
+						</select></td>
+						<td><input id="cedula" class="form-control" style="width: 80%;" type="text" placeholder="Nro Identificacion"></td>
+					</tr>
+				</table>
+				<table class="table-responsive " width="100%">
+					<td style="width: 15%;"><label class="control-label" for="direccion">NOMBRES:</label></td>
+					<td><input class="form-control" style="width: 90%;" id="nombres" type="text" size="30" maxlength="30" placeholder="Nombres"></td>
+				</table>
+				<table class="table-responsive " width="100%">
+					<td style="width: 15%;"><label class="control-label" for="apellido">APELLIDOS:</label></td>
+					<td><input class="form-control" style="width: 90%;" id="apellidos" type="text" size="30" maxlength="30" placeholder="Apellidos"></td>
+				</table>
+				<table class="table-responsive " width="100%">
+				    <tr>
+					   <td style="width: 15%;"><label class="control-label" for="direccion">DIRECCION:</label></td>
+					   <td>
+					      <input class="form-control" style="width: 95%;" id="direccion" type="text" size="30" maxlength="30" placeholder="Direccion">
+					    </td>
+					    <td style="width: 15%;"><label class="control-label" for="telefono">TELEFONO:</label></td>
+					   <td>
+					      <input class="form-control" style="width: 90%;" id="telefono" type="text" size="15" maxlength="12" placeholder="Telefonos">
+					    </td>
+					 </tr>
+					 <tr>
+					   <td style="width: 15%;"><label class="control-label" for="direccion">CORREO ELECTRONICO:</label></td>					   
+					   <td>
+					      <input class="form-control" style="width: 90%;" id="correoElectronico" type="text" size="30" maxlength="35" placeholder="Correo Electronico">
+					   </td>
+					 </tr>  
+				</table>
+				<br> <br>
+			</form>
+			<div class="col-xs-12 col-md-12 col-lg-12 espacio"></div>
+			<div class="col-xs-12 col-md-12 col-lg-12 espacio"></div>
+		</div>
+	</div>
+	<input type= "hidden" id="identificador"  value="0">
+    <input type= "hidden" id="idPreRevision"  value="">
+	<footer class="navbar navbar-fixed-bottom">
+            <span class="pull-left"><img id="logoEmpresa" src="./img/Soltelec.png" alt="" class="img-rounded" style="width:90px;height:53px;margin-left:25px;margin-top:5px;"/></span>
+            <p class="text-center">@2007 copyright  Soltelec sas </p> 
+        </footer>
+	<script src="./js/AHAHlib2.js"></script>
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/eModal.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/RegistroDatosConductorUbicacion.js"></script>
+</body>
+</html>

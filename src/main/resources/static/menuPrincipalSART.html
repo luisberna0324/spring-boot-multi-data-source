@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>MODULO DEL SART-WEB</title>
+        <link rel="icon" href="./img/favicon.ico">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/bootstrap.css">        
+        <link rel="stylesheet" href="./css/menuPrincipalSART.css">
+        <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+    </head>
+    <body>
+        <header class="navbar-header navbar-fixed-top" id="cabeceraPag">
+            <div class="pull-right">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="label"><a href="#"></a>
+                        <div style="color: #DCDCDC;" class="test-name" id="nombreUsuario"></div>
+                    </li>
+                    <li><img id="fotoUsuario" class="img-circle img-responsive pull-right" src="./img/user.png" alt="./fonts/user.png" style="margin-right: 40px; height: 50px; width: 45px; margin-top: 10px;">
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-center">
+                    <strong id="ctxMenu">MODULO PRINCIPAL DEL SART-WEB</strong>
+                </h4>
+            </div>
+            <div style="cursor:pointer;"class="pull-left reply" id="" onclick="menuPrincipal();"><i class="fa fa-2x fa-mail-reply"></i></div>
+        </header>
+        <div class="container">
+            <fieldset>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <h2 class="text-center"><strong>PLACAS DE TURNO</strong></h2> 
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 pull-right"><a href="#">&nbsp;</a><i class="fa fa-motorcycle fa-4x" title="Motos Disponibles" onclick="serFindCtxPista(4);"></i></div>   
+                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 pull-right"><a href="#">&nbsp;</a><i class="fa fa-truck fa-4x" title="Pesados Disponibles" onclick="serFindCtxPista(10);"></i></div>
+                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 pull-right"><a href="#">&nbsp;</a><i class="fa fa-car fa-4x" title="Livianos Disponibles" onclick="serFindCtxPista(10);"></i></div>
+                </div> 
+            </fieldset>
+            <div class="row"> 
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <table class="table-responsive table-condensed" border="1" width="100%">
+                            <tr>
+                                <th id="nroTurno0" style="background-color:#ffffff;">TURNO: N/A</th>
+                                <th id="condicion0" style="background-color:#ffffff;">CONDICION:N/A </th>                        
+                            </tr>
+                            <tr>                                                
+                                <tD id="TIPO0" style="background-color:#ffffff;">TIPO:N/A </td>
+                                <td  COLSPAN="2" id="nroPlaca0"></td>
+                            </tr>                    
+                        </table>             
+                        <input type= "hidden" id="txtPlaca0"  value="">
+                        <input type= "hidden" id="ctxHojaPrueba0" value="">                     
+                        <input type= "hidden" id="ctxServicio0" value="">
+                        <input type= "hidden" id="ctxClaseVehiculo0" value="">
+                        
+                        <input type= "hidden" id="ctxTipoVehiculo0" value="">
+                        <input type= "hidden" id="ctxNroEjes0" value="">
+                        <input type= "hidden" id="ctxEnsenanza0" value="">
+                        <input type= "hidden" id="ctxPoseePacha0" value="">
+                        
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 
+                        <table class="table-responsive table-condensed" border="1" width="100%">
+                            <tr>
+                                <th id="nroTurno1" style="background-color:#ffffff;">TURNO: N/A</th>
+                                <th id="condicion1" style="background-color:#ffffff;">CONDICION:N/A  </th>                        
+                            </tr>
+                            <tr>                                                
+                                <td id="TIPO1" style="background-color:#ffffff;">TIPO:N/A </td>
+                                <td  COLSPAN="2" id="nroPlaca1"></td>
+                            </tr>
+                        </table>
+                        <input type= "hidden" id="txtPlaca1"  value="">
+                        <input type= "hidden" id="ctxHojaPrueba1" value="">
+                        <input type= "hidden" id="ctxServicio1" value="">
+                        <input type= "hidden" id="ctxTipoVehiculo1" value="">
+                        <input type= "hidden" id="ctxNroEjes1" value="">
+                        <input type= "hidden" id="ctxEnsenanza1" value="">
+                        <input type= "hidden" id="ctxPoseePacha1" value="">
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 
+                        <table  class="table-responsive table-condensed" border="1" width="100%">
+                            <tr>
+                                <th id="nroTurno2" style="background-color:#ffffff;">TURNO: N/A</th>
+                                <th id="condicion2" style="background-color:#ffffff;">CONDICION:N/A  </th>                        
+                            </tr>
+                            <tr>
+                                <td id="TIPO2" style="background-color:#ffffff;">TIPO:N/A </td>
+                                <td COLSPAN="2" id="nroPlaca2"></td>
+                            </tr>
+                        </table>
+                        <input type= "hidden" id="txtPlaca2"  value="">
+                        <input type= "hidden" id="ctxHojaPrueba2" value="">
+                        <input type= "hidden" id="ctxServicio2" value="">
+                        <input type= "hidden" id="ctxTipoVehiculo2" value="">
+                        <input type= "hidden" id="ctxNroEjes2" value="">
+                        <input type= "hidden" id="ctxEnsenanza2" value="">
+                        <input type= "hidden" id="ctxPoseePacha2" value="">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <table  class="table-responsive table-condensed" border="1" width="100%">
+                            <tr>
+                                <th id="nroTurno3" style="background-color:#ffffff;">TURNO: N/A</th>
+                                <th id="condicion3" style="background-color:#ffffff;">CONDICION:N/A </th>                        
+                            </tr>
+                            <tr>
+                                <td id="TIPO3" style="background-color:#ffffff;">TIPO:N/A </td>
+                                <td COLSPAN="2" id="nroPlaca3"></td>
+                            </tr>
+                        </table>
+                        <input type= "hidden" id="txtPlaca3"  value="">
+                        <input type= "hidden" id="ctxHojaPrueba3" value="">
+                        <input type= "hidden" id="ctxServicio3" value="">
+                        
+                        <input type= "hidden" id="ctxTipoVehiculo3" value="">
+                        <input type= "hidden" id="ctxNroEjes3" value="">
+                        <input type= "hidden" id="ctxEnsenanza3" value="">
+                        <input type= "hidden" id="ctxPoseePacha3" value="">
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <table  class="table-responsive table-condensed" border="1" width="100%">
+                            <tr>
+                                <th id="nroTurno4" style="background-color:#ffffff;">TURNO: N/A</th>
+                                <th id="condicion4" style="background-color:#ffffff;">CONDICION:N/A </th>                        
+                            </tr>
+                            <tr>
+                                <td id="TIPO4" style="background-color:#ffffff;">TIPO:N/A </td>
+                                <td COLSPAN="2" id="nroPlaca4"></td>
+                            </tr>
+                        </table>
+                        <input type= "hidden" id="txtPlaca4"  value="">
+                        <input type= "hidden" id="ctxHojaPrueba4" value="">
+                        <input type= "hidden" id="ctxServicio4" value="">
+                        <input type= "hidden" id="ctxTipoVehiculo4" value="">
+                        <input type= "hidden" id="ctxNroEjes4" value="">
+                        <input type= "hidden" id="ctxEnsenanza4" value="">
+                        <input type= "hidden" id="ctxPoseePacha4" value="">
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <table class="table-responsive table-condensed" border="1" width="100%">
+                            <tr>
+                                <th id="nroTurno5" style="background-color:#ffffff;">TURNO: N/A</th>
+                                <th id="condicion5" style="background-color:#ffffff;">CONDICION:N/A </th>                        
+                            </tr>
+                            <tr>
+                                <td id="TIPO5" style="background-color:#ffffff;">TIPO:N/A </td>
+                                <td COLSPAN="2" id="nroPlaca5"></td>
+                            </tr>
+                        </table>
+                        <input type= "hidden" id="txtPlaca5"  value="">
+                        <input type= "hidden" id="ctxHojaPrueba5" value="">
+                        <input type= "hidden" id="ctxServicio5" value="">
+                        <input type= "hidden" id="ctxTipoVehiculo5" value="">
+                        <input type= "hidden" id="ctxNroEjes5" value="">
+                        <input type= "hidden" id="ctxEnsenanza5" value="">
+                        <input type= "hidden" id="ctxPoseePacha5" value="">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <table  class="table-responsive table-condensed" border="1" width="100%">
+                            <tr>
+                                <th id="nroTurno6" style="background-color:#ffffff;">TURNO: N/A</th>
+                                <th id="condicion6" style="background-color:#ffffff;">CONDICION:N/A </th>                        
+                            </tr>
+                            <tr>
+                                <td id="TIPO6" style="background-color:#ffffff;">TIPO:N/A </td>
+                                <td COLSPAN="2" id="nroPlaca6"></td>
+                            </tr>
+                        </table>
+                        <input type= "hidden" id="txtPlaca6"  value="">
+                        <input type= "hidden" id="ctxHojaPrueba6" value="">
+                        <input type= "hidden" id="ctxServicio6" value="">
+                        <input type= "hidden" id="ctxTipoVehiculo6" value="">
+                        <input type= "hidden" id="ctxNroEjes6" value="">
+                        <input type= "hidden" id="ctxEnsenanza6" value="">
+                        <input type= "hidden" id="ctxPoseePacha6" value="">
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <table  class="table-responsive table-condensed" border="1" width="100%">
+                            <tr>
+                                <th id="nroTurno7" style="background-color:#ffffff;">TURNO: N/A</th>
+                                <th id="condicion7" style="background-color:#ffffff;">CONDICION:N/A </th>                        
+                            </tr>
+                            <tr>
+                                <td id="TIPO7" style="background-color:#ffffff;">TIPO:N/A </td>
+                                <td COLSPAN="2" id="nroPlaca7"></td>
+                            </tr>
+                        </table>
+                        <input type= "hidden" id="txtPlaca7"  value="">
+                        <input type= "hidden" id="ctxHojaPrueba7" value="">
+                        <input type= "hidden" id="ctxServicio7" value="">
+                        <input type= "hidden" id="ctxTipoVehiculo7" value="">
+                        <input type= "hidden" id="ctxNroEjes7" value="">
+                        <input type= "hidden" id="ctxEnsenanza7" value="">
+                        <input type= "hidden" id="ctxPoseePacha7" value=""> 
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <table  class="table-responsive table-condensed" border="1" width="100%">
+                            <tr>
+                                <th id="nroTurno8" style="background-color:#ffffff;">TURNO: N/A</th>
+                                <th id="condicion8" style="background-color:#ffffff;">CONDICION:N/A </th>                        
+                            </tr>
+                            <tr>
+                                <td id="TIPO8" style="background-color:#ffffff;">TIPO:N/A </td>
+                                <td COLSPAN="2" id="nroPlaca8"></td>
+                            </tr>
+                        </table>
+                        <input type= "hidden" id="txtPlaca8"  value="">
+                        <input type= "hidden" id="ctxHojaPrueba8" value="">
+                        <input type= "hidden" id="ctxServicio8" value="">
+                        <input type= "hidden" id="ctxTipoVehiculo8" value="">
+                        <input type= "hidden" id="ctxNroEjes8" value="">
+                        <input type= "hidden" id="ctxEnsenanza8" value="">
+                        <input type= "hidden" id="ctxPoseePacha8" value=""> 
+                    </div>
+                </div> 
+            </div>          
+        </div>
+        <input type="hidden" id="identificador" value="" required>
+        <script src="./js/AHAHlib2.js"></script>
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/eModal.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/ie10-viewport-bug-workaround.js"></script>
+        <script src="./js/menuPrincipalSART.js"></script>
+    </body>
+</html>

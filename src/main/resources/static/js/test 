@@ -1,0 +1,90 @@
+Using drag and drop for selecting
+
+<div id="drop_zone">Drop files here</div>
+<output id="list"></output>
+
+<script>
+  function handleFileSelect(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+
+    var files = evt.dataTransfer.files; // FileList object.
+
+    // files is a FileList of File objects. List some properties.
+    var output = [];
+    for (var i = 0, f; f = files[i]; i++) {
+      output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+                  f.size, ' bytes, last modified: ',
+                  f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
+                  '</li>');
+    }
+    document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+  }
+
+  function handleDragOver(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+    evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
+  }
+
+  // Setup the dnd listeners.
+  var dropZone = document.getElementById('drop_zone');
+  dropZone.addEventListener('dragover', handleDragOver, false);
+  dropZone.addEventListener('drop', handleFileSelect, false);
+</script>
+
+
+************************************************
+Using form input for selecting
+
+<input type="file" id="files" name="files[]" multiple />
+<output id="list"></output>
+
+<script>
+  function handleFileSelect(evt) {
+    var files = evt.target.files; // FileList object
+
+    // files is a FileList of File objects. List some properties.
+    var output = [];
+    for (var i = 0, f; f = files[i]; i++) {
+      output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+                  f.size, ' bytes, last modified: ',
+                  f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
+                  '</li>');
+    }
+    document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+  }
+
+  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+</script>
+
+ //var returnedBase64=window.btoa(unescape(encodeURIComponent(xhr.responseText)));
+					   
+					  var returnedBase64= window.btoa(unescape(encodeURIComponent(xhr.response)));
+					  
+					  //var enc64 =window.btoa(returnedBase64);
+					  
+					  alert("encod.- "+returnedBase64);
+					  var base64 =
+							"iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB1klEQVR42n2TzytEURTHv3e8N1joRhZG" +
+							"zJsoCjsLhcw0jClKWbHwY2GnLGUlIfIP2IjyY2djZTHSMJNQSilFNkz24z0/Ms2MrnvfvMu8mcfZvPvu" +
+							"Pfdzz/mecwgKLNYKb0cFEgXbRvwV2s2HuWazCbzKA5LvNecDXayBjv9NL7tEpSNgbYzQ5kZmAlSXgsGG" +
+							"XmS+MjhKxDHgC+quyaPKQtoPYMQPOh5U9H6tBxF+Icy/aolqAqLP5wjWd5r/Ip3YXVILrF4ZRYAxDhCO" +
+							"J/yCwiMI+/xgjOEzmzIhAio04GeGayIXjQ0wGoAuQ5cmIjh8jNo0GF78QwNhpyvV1O9tdxSSR6PLl51F" +
+							"nIK3uQ4JJQME4sCxCIRxQbMwPNSjqaobsfskm9l4Ky6jvCzWEnDKU1ayQPe5BbN64vYJ2vwO7CIeLIi3" +
+							"ciYAoby0M4oNYBrXgdgAbC/MhGCRhyhCZwrcEz1Ib3KKO7f+2I4iFvoVmIxHigGiZHhPIb0bL1bQApFS" +
+							"9U/AC0ulSXrrhMotka/lQy0Ic08FDeIiAmDvA2HX01W05TopS2j2/H4T6FBVbj4YgV5+AecyLk+Ctvms" +
+							"QWK8WZZ+Hdf7QGu7fobMuZHyq1DoJLvUqQrfM966EU/qYGwAAAAASUVORK5CYII=";
+					var base64_1="77+9UE5HDQoaCgAAAA1JSERSAAAC77+9AAAD77+9CAIAAADvv71977+977+9AADvv70ASURBVHjvv73UvVfvv70bR++/ve+/ve+/ve+/vTk937Ra77+977+9SBl6UwXvv71LDyTvv70tS1Lvv73vv73vv71z77+9e2bvv73vv70/O2Jn77+977+9Su+/vUVK77+9c++/vXHvv70rMu+/vUAVUUA+77+977+977+9YB7vv70X77+9BjQdVu+/vX5577+9Fu+/vUHWt3IY77+9RjVoNW4uRu+/ve+/ve+/ve+/vQwbIu+/veC4nu+/ve+/ve+/vTTvv71PJ++/vdm077+977+9Ne+/ve+/vdKk77+9GFfvv73VpO+/ve+/vVY377+977+9etaAVtO6CO+/ve+/ve+/vUkM77+9YWU2Ku+/vQjvv70PYTzvv70L77+9JChO77+9Mn4l77+977+9Ge+/vVLvv73vv71OQxjvv73vv73vv70YYO+/ve+/vU51W++/ve+/vU7vv70eFB3vv70077+977+977+93ZxrVx3vv70C77+9du+/vXPvv71977+91rfvv73vv71y77+9Nu+/ve+/vQjvv71u0IE877+9Ce+/vW5D77+977+9LUjGrtuBfO+/vceB77+9dSHvv70GQR/vv70/77+9eu+/ve+/vTtsOUHvv70/SO+/ve+/ve+/vQY4On4XF1Dvv73vv73vv704GO+/ve+/vWHvv70K77+9A2g477+9YjlQMFTvv70D77+977+9Bu+/vdO177+977+977+9de+/ve+/vSjvv70hPgXvv73vv73vv73vv70R77+977+9YV80Gu+/ve+/vXAwHlvvv71EaTzvv70h77+977+977+977+977+9YDQeYO+/vSPvv70L77+9EF/vv70/Ihw7EGdE77+977+9SygYYu+/ve+/vWAyDWJ577+9FH5nCmPvv73vv71s77+977+9KO+/vTs+NO+/ve+/ve+/vXkxTmcLD++/vWpCeDo077+9DWfvv70RxJ/Cp++/vQ/vv73vv73vv71g77+9Hi9X77+9fO+/vc+X77+9Pu+/vVoMeQ3vv70LeO+/ve+/vSLEq0EYQO+/vTUD77+9UDgdT++/ve+/vTLvv70x35N40p8u77+977+977+9DkIrCO+/vU7vv73vv73vv71adu+/vXHavu+/vT5177+977+977+9OO+/vU7vv73vv73vv712MO+/vXXKle+/ve+/ve+/vVLvv70k77+9e++/vcu/77+9F++/ve+/vTLvv70ePu+/vQc9eu+/vSXvv73vv73vv71X77+977+9Z++/ve+/ve+/ve+/ve+/ve+/vRhAT++/vX3vv73vv73vv70XTx59Bj1/ejd977+9dT7vv73vv73vv71/77+977+93ofvv73vv71P77+9f++/vU7vv70N77+9zaFf77+977+9Su+/vV/vv71277+977+9fnlg77+9He+/vQPvv71zBWHvv71PF++/ve+/vT0/77+9c1JOHe+/ve+/vXrvv73vv73vv73vv70GPnXvv73vv73vv73vv71WG++/ve+/vem4gB8bXu+/vU81P07vv71B77+9U37vv73vv71jNhzvv73vv73vv73vv73vv71J77+9Ue+/ve+/ve+/ve+/vRQfUXxN77+9OMay77+9R1cP77+9D0bvv73vv73vv71CTz9dPu+/ve+/ve+/ve+/ve+/vWZF77+9R++/vQ/vv73vv73vv71Y77+9ce+/ve+/vVkW77+9LO+/ve+/vXLvv702Xwrvv73vv73vv70+77+977+977+977+977+93o3vv73vv71tP04u77+9BXxjOe+/vTHvv71877+9UBjvv73vv73vv70/DS/vv73vv73vv71l77+9IO+/vSF51LzGtVrOoAnvv71OB++/ve+/ve+/vTco77+9V2/vv71K77+9Dj4P77+977+977+9AWHvv73vv73VqO+/vdWEOu+/ve+/vQAP77+9Au+/vW7vv73vv71u77+9ITwLY++/ve+/ve+/vU4FV0IYNFsl77+9JO+/vWc177+9Re+/ve+/vSjvv73vv715HO+/ve+/vXHvv71x77+977+977+9xqo3Cjjvv71k77+977+9bu+/vQvvv71G77+9We+/vTfvv704Pe+/ve+/vU7vv73vv71U77+977+977+977+9Uu+/ve+/vSnvv73vv73vv70p1ajvv70a77+9XO+/ve+/vSkXTu+/vVIpVSzvv71W77+9eArvv73vv71p77+977+9Ewjvv71477+9fO+/vUUx77+9VCHvv73vv73vv70/77+9MO+/ve+/vWcQ77+977+977+9M3wr77+977+977+9ZO+/ve+/vTNPU++/vScy77+977+977+9Fw9OTh7vv73vv70+77+977+977+9J1AGD++/ve+/ve+/vVLvv70pPO+/vU49S++/vT5977+977+94bOnD148f3Tvv73vv73vv73vv70n77+9Me+/vQxO77+905MnHO+/vSHvv73vv73Dr3Dvv73vv73vv73vv73vv73vv71r77+9RO+/ve+/vRRnRB/vv71n77+9zbwNYe+/ve+/vTbvv70T77+977+9PhtV77+9Ie+/vV4FVu+/vX5577+9Qu+/vUDvv73vv708TiHvv70vRu+/ve+/ve+/vQrvv71P77+9Gu+/ve+/vXzvv70A77+9Be+/vVkDaO+/ve+/ve+/ve+/vWbepO+/vX9SHAPvv71cHu+/vVwK77+9KwDvv71677+9SRPvv70bfu+/vdW077+907Ff77+9WkTvv73vv71aOe+/vRpkAO+/vU7vv70UwqDvv73vv71A77+9Tu+/ve+/ve+/vUHvv71277+977+9Ux3vv70V265hYO+/vTXHqUMY77+977+9IncwbAVeA++/ve+/vTrvv705NRzNme+/ve+/vXfvv70FDe+/vQ4Hckp5Xu+/vQtaFG4BFO+/vWDvv71dVV8/77+9LVBPcO+/ve+/ve+/vXdbbu+/ve+/vWHvv73vv70F77+977+977+977+977+977+977+977+977+924fvv70p77+977+9fArvv70YH++/vV1pYu+/veSng++/vWpJMeqZjyrvv713W++/vXwF77+977+90J0w77+9SC/vv71e77+9Fznvv70E77+9OSDvv73vv73vv70xFwHvv73vv73vv715P3fvv70oBjNZe0h377+9Gk4XS++/vXt4SHfvv73Hi++/vWjvv73vv73vv707Ze+/vcqPOyrvv73vv73vv73vv70fTRwo77+9KgLvv73vv70ZWEB7D38dLBxL77+9Z++/vRLvv71n77+977+9ZjAKGs+e77+9e++/ve+/vUfvv73vv719c++/ve6Dh3dx77+977+9TO+/vT97fu+/ve+/vTLvv70R77+977+9T++/vXzvv73vv70e77+9fu+/ve+/vVzvv70h77+977+9PO+/ve+/ve+/ve+/ve+/vV3vv719Nu+/vc6n77+977+9CFTvv73vv716Je+/vUEVd3ATEu+/ve+/ve+/ve+/ve+/vXk+PnLvv73vv71TESvvv70Aa++/ve+/vcKP77+9MF7vv71q77+9TO+/ve+/ve+/ve+/vWdj77+9cVJ/77+9eO+/vQbvv73vv71M77+9Q++/vXV8Al5/Am/vv70dSixV77+9F++/vU9Xa++/vXjvv70h77+977+9YO+/ve+/vWkb77+9Ke+/vXnvv71877+977+9BgAv37gE77+977+977+9HO+/ve+/vduUXE/vv71377+9fO+/ve+/vXo/77+9QD7vv71kIh9/OO+/vWPvv71Cd8iz77+9QDvvv70Ce++/vXQfaO+/vUPvv705RO+/vXMS77+9Bu+/vXvvv70a77+977+9EgMS77+9M3xI77+9Tu+/ve+/ve+/vRxwDO+/ve+/vQnvv71DHAvvv70V77+977+977+9Ee+/vVQqGXAddAfvv70bCu+/ve+/vWpd77+9VAHvv71P77+977+9F++/vX3vv710Wivvv73vv71GNVPvv71k77+977+9NO+/vUzvv71TJt2pYjwJ77+9FwonBO+/vShBd++/vSHvv71q77+93JTQne+/vRcx77+9AXLvv70777+9MgPvv70D77+9Ju+/vTHvv70wT++/ve+/vRTvv73vv73vv73vv70977+9Ee+/ve+/ve+/vRcJ77+9PyDat++/vQ7vv73vv73vv710WFnvv71177+9cO+/vUwR77+9Qu+/ve+/ve+/ve+/ve+/vRXvv71BORzvv70n77+9P8a177+9BFsc77+977+9zptn77+977+977+977+9Je+/ve+/vS5aEO+/vS3vv71X77+9GO2Euu+/vQZw77+9bu+/ve+/vQ/vv73vv70K77+9cgTvv70q77+9H++/vUTvv73vv71hUO+/vW/vv70B77+9TtGxC++/vSDvv73vv73vv71e77+977+977+9c++/vU4G77+9de+/ve+/vV5uYBVj77+977+977+9Pgpa77+9HVNcEX3vv703ZSwz77+91YAC77+9zYFnK++/ve+/vVJ077+977+977+9UxHdje+/vWJP77+9PV0C77+9cO+/ve+/vSlgYF7vv73vv70G77+9cG7vv70d77+9Vu+/ve+/ve+/vTrvv71+Ie+/ve+/ve+/ve+/vU7TnO+/vQo/77+9Vu+/vdCdFu+/ve+/ve+/vRsuAe+/ve+/vTsR77+977+9YD4+77+9fXTvv71177+9I++/ve+/ve+/vRfvv70T77+977+9NO+/vXxI77+977+9Yu+/ve+/vR/vv71035vvv73vv73vv73vv71CdwHvv70Je++/ve+/ve+/ve+/ve+/vTMv77+977+977+9eBbvv73vv70h3Yfvv70e77+977+977+977+9Yu+/ve+/vW0dfO+/vR4877+977+977+977+9fO+/vdWnX++/ve+/ve+/vd6Xd2Dvv70/fu+/vQ3vv70OS++/vTg/OX3vv73vv70Y77+977+9du+/ve+/vcKTSu+/vRnvv71gfO+/ve+/ve+/ve+/vcef77+977+9QO+/vWLWn++/vW3vv73ete+/vWDvv73vv73vv71idApI77+9K++/vU58Gu+/vdmTMu+/ve+/vWjvv73vv70JGO+/vQXvv73vv73vv71K77+9f015BRPvv73vv71v77+9Be+/vXDvv71eJe+/vTLvv71ObxPvv70E77+977+9fgPvv73vv73vv73vv70H77+9Cu+/vTPvv71Y2ZNYfSUV77+9Te+/ve+/vW5TfXHvv73vv70uAWxZXu+/ve+/ve+/vQTvv73NpQAHXHYk77+9du+/ve+/vX3vv71Y77+9He+/vTsoTu+/vQduN0F377+977+9IO+/vW3vv73vv73vv73vv70HEO+/vRQ4be+/vV3vv71yCgnvv70F77+9du+/vWot77+9IO+/vSRo77+9J0Tvv73vv70a77+977+9GRvvv73vv71qFu+/vTjvv70Oae+/vV7vv73vv71SS++/vXTvv70UTwjvv70E77+9Ye+/vQPvv71lbe+/vQvvv71p77+9w4Lvv70RD++/ve+/ve+/ve+/vWrvv73vv70H77+9fx/vv73vv71o77+9Uwnvv73vv71U77+977+977+9Ce+/vS5mOmHvv70jbXrvv73vv70K77+9QWsMaO+/vXNeBhTGpDvvv70OW++/ve+/vdWi77+977+9N3Dvv73vv73vv70W77+9GWo277+977+977+9MO+/vWlk04UOfkPvv73vv70Yeu+/ve+/vS3vv73vv73vv71fGu+/vUVoFO+/ve+/ve+/vWF+77+9FxZhZTXvv73vv73vv71V77+977+977+977+9Ll56Ilzvv71Cd++/vRLvv71nKyw7Wu+/ve+/vdOgN++/vXvvv73vv73vv71i77+9AgTKnTDvv73vv73vv73vv73Qq2Dvv71h77+9c1Yva++/vQvvv71+77+977+9Te+/vTvqiLHvv73vv70rDXJYCnh277+9cyrvv70+Bl5t77+977+9MNmrFGbvv70a77+9Xe+/vWDvv71z77+9OTDvv70gAO+/ve+/ve+/vXbvv70D77+9JteJYe+/vVV377+977+9PTDvv70g77+9Be+/vTTvv73vv71G77+9CO+/ve+/vQLvv73vv73vv73vv71X77+9Q++/ve+/vU7vv73vv71UXu+/vVMM77+9UO+/ve+/ve+/vVswKc6n77+926J2Od68R++/vRHvv71rb++/vWMyXu+/ve+/vW/vv70h77+9ee+/ve+/ve+/ve+/vTPvv73Pou+/ve+/vVLvv73vv73dhO+/vS10T0g877+977+9Te+/ve+/vXbvv71o77+9Ju+/ve+/vW9v77+9Ku+/ve+/ve+/ve+/ve+/ve+/vVLvv73vv73vv73vv73vv73vv71ld++/ve+/vRzvv70C77+9f3nvv73vv73vv70vPu+/ve+/ve+/vT/vv73ik6/vv73vv73vv73vv73vv70vHz7vv70Keu+/vRg477+977+977+977+977+977+9Rzg+eXrvv73vv70477+977+977+93aEXT++/vUrvv73vv70P77+977+977+977+96LGsVV5k77+977+977+9P++/ve+/vXQX77+977+9bXQ/yqEYWg7vv71377+977+977+977+977+9US4377+9NVzvv73uh7w3PnI377+9Owbvv70dw47vv73vv71g77+9LAvvv73vv70m77+9E3Q377+9BzI2LWzvv73vv73TixXvv73vv73vv70U77+9cHzvv73Ul0Ub5bK8Fu+/vSfvv703PHozbO+/vRXvv70Z77+977+9Kn/vv71b6J6w77+9eU0C77+977+9Hu+/vXfvv71dAE/vv70777+977+977+90b3vv71ZTu+/vVvvv703SE/vv71jZ++/ve+/vR1H77+977+9dO+/ve+/vUnvv73vv70u77+9PyTvv73vv70DWu+/ve+/vVfvv718PQ/vv73vv718B92V676aLldTFO+/ve+/vVTvv73vv71777+977+977+977+9M++/vWIKMO+/vRFc77+977+977+977+977+977+9L++/vV10GkPvv73vv71R77+9U2Lvv70L77+9RQJy77+934d077+9A++/vQjvv70X77+9OkXvv71zTN6r77+9xq1E77+977+9eADvv73vv705T++/ve+/vWzahO+/vQHvv70dGu+/vSrvv70/77+9Pwbvv70s77+9Y++/vWopAO+/vQ/vv70s77+977+9AWZ4Je+/ve+/vSpUH8ObTnvvv73vv71X77+977+9el5b77+9K++/vcWN77+9ZlHvv70u77+977+9YlZd77+9y6sFfnPvv70f77+9bz7vv73vv710KkDvv73vv70A77+9RRcW77+9cgDvv73vv71x0KESOsWh77+977+977+9bDDvv73vv73Kt++/ve+/vQrvv70efu+/ve+/ve+/vceMbe+/vQLvv71BfRXvv73vv73vv70aBzrvv71f77+9Dx9HNe+/ve+/vRnvv73vv71277+9UgBs77+9Zu+/vRsB77+977+977+9QO+/ve+/vXsS77+977+9EmMYc++/vWEnCO+/vcSuSO+/ve+/ve+/vVvvv71C77+9LVDvv71GOe+/ve+/vSlKGGMe77+9Hu+/ve+/ve+/vQYifuubo++/vWjvv705EO+/vSdi77+9Yty8D++/vUXvv73vv73vv708xZHvv73vv70EDzh/AwkzZ++/ve+/ve+/vWAWS++/ve+/vWce77+977+977+9Ve+/vQHvv71577+9fu+/vXDvv70cL1fvv70E77+9TTPvv71jXAbvv70Fchrvv70+77+9Le+/vWLvv71z77+977+9b++/vWnvv73vv70rVWsn77+977+977+977+977+977+967aKdz7vv73vv707H++/ve+/ve+/ve+/vTt3Pu+/ve+/ve+/ve+/vXvvv73vv70A46Gv77+977+977+977+9d++/vT/vv70HAe+/vQ8eKu+/vcOyB++/vXF877+977+9a++/ve+/vc+mHu+/vTNPMilF77+9Yu+/vUku77+9VHhE77+9Y++/vUrvv718Iu+/vQAM77+9RSdKHER377+977+977+9KO+/vWnvv73vv70VZHEmTzfXi++/ve+/vT/vv73vv71h77+9Pu+/vUATXTAvdDfvv73vv70JN++/ve+/vWEzPe+/ve+/vRYjO++/vTLvv70edXXvv71ya++/vWjvv73vv73vv70x6I6vCT/vv73vv71S77+9Z0cd77+977+9xbpa77+9x44677+977+9JO+/vS7vv73vv73vv71X77+977+9dhcL77+977+9Qz4Be++/vR3vv70577+9DDFhCCzvv73vv70k77+9O++/ve+/vQl1Uu+/vQPvv73vv73vv70y77+977+9dO+/vWprXu+/ve+/vd2Y77+9OO+/vQ7vv70r77+9O++/ve+/ve+/vRR+Lh3vv73vv73vv71DMO+/vRPvv73vv73vv73vv71X77+977+977+9bhQr77+9DGx3GO+/vVDvv73vv71tNHLNpu+/ve+/vTXvv71TFAx377+9O++/ve+/vUo3AW9677+9Ge+/vWfvv71edO+/vTMPCe+/vXM577+9bFbvv70+77+9YxXvv73vv73vv70077+9Ke+/vTvvv73vv73vv73vv73vv70dLx5477+977+9Ju+/vcWm77+9AO+/vQbvv70fP++/vRoD77+977+977+9Yu+/vVN8VDzvv73vv70HMO+/ve+/ve+/vQTvv71p77+9A++/ve+/ve+/ve+/ve+/ve+/ve+/vRkgORxV77+9YQ1077+977+977+977+977+9S1wzLu+/vXzvv70AUAfvv70Bde+/vT3vv70zJD3vv71x77+9NUJ0Ze+/vWs/77+9eu+/vWlF051E77+9UO+/vTpOOe+/ve+/ve+/vVbvv70qBO+/vc+n77+977+9M++/ve+/ve+/vX9EZQPvv70b77+9aX07b25n77+9DX7DiUoaUBrvv70X77+9CkAsJ++/vXHvv70IR3Xvv70r07EP77+9M++/vQ/vv71DIH3vv73vv73vv713C1bvv73vv73vv73vv73vv70y77+9Ne+/vSsm77+977+977+9Mu+/vU4277+9IO+/ve+/vU1jah5WABDvv73vv71IdzJb77+9A3QGH++/ve+/vS8G77+977+9ZO+/ve+/vQjvv73Fju+/vXwn77+977+9x53vv71hAu+/ve+/ve+/ve+/vXdl1YkNZ0oi77+9BO+/ve+/ve+/vcyT77+9YkgdTe+/vUtk77+9He+/ve+/ve+/vVl1OF3vv73vv71b77+9Hkfvv73vv71K77+9w6w6XGMSXRYBYu+/ve+/vXTvv73vv71077+9de+/ve+/ve+/vVfvv719OR/vv71t77+977+977+9a++/vXMff++/vW/vv71877+977+9P++/ve+/vVPvv73vv73vv73vv73vv73cve+/ve+/ve+/vS8/77+977+9KyVi77+977+9KUgP77+9Q++/vR/chR7vv73vv70C77+9Z++/ve+/vcqcPkzvv708eO+/ve+/vc6TR++/ve+/vU/vv71J77+9fFXvv708E++/ve+/vQ5u77+9Ze+/ve+/ve+/ve+/vRwD77+9JBPvv73QhO+/vRDvv71/XD/vv73vv700T3jvv73vv73vv70TTz7vv73Kie+/vU/vv70ve++/ve+/ve+/vSPvv73vv70677+977+9d++/";		
+							var binary = fixBinary(atob(base64_1));
+					 
+					 
+					 
+					 var blob = new Blob([returnedBase64], {type: 'image/png'});
+					 var url = URL.createObjectURL(blob);
+					 var img = document.createElement('img');
+					 img.src = url;
+					 document.body.appendChild(img);					   
+					  alert("r10.-  "+blob);					
+					  // clipboard to base64
+				  };

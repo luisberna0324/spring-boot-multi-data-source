@@ -101,7 +101,7 @@ DataSource Configurations for WriteDB:
 @EnableJpaRepositories(
         entityManagerFactoryRef = "entityManagerFactoryWrite",
         transactionManagerRef = "transactionManagerWrite",
-        basePackages = {"com.ehsaniara.multidatasource.repository.writeRepository"}
+        basePackages = {"com.soltelec.consolaory.writeRepository"}
 )
 public class DataSourceConfigWrite extends HikariConfig {
 
@@ -141,7 +141,7 @@ DataSource Configurations for ReadDB:
 @EnableJpaRepositories(
         entityManagerFactoryRef = "entityManagerFactoryRead",
         transactionManagerRef = "transactionManagerRead",
-        basePackages = {"com.ehsaniara.multidatasource.repository.readRepository"}
+        basePackages = {"com.soltelec.consolaory.readRepository"}
 )
 public class DataSourceConfigRead extends HikariConfig {
 
@@ -175,13 +175,13 @@ public class DataSourceConfigRead extends HikariConfig {
 
 Read and Write repositories should be in a separated packages :
 
-Write: ```com.ehsaniara.multidatasource.repository.writeRepository```
+Write: ```com.soltelec.consola.repository.writeRepository```
 
-Read: ```com.ehsaniara.multidatasource.repository.readRepository```
+Read: ```com.soltelec.consola.repository.readRepository```
 
 you also need to set:
 ```java
-public final static String MODEL_PACKAGE = "com.ehsaniara.multidatasource.model";
+public final static String MODEL_PACKAGE = "com.soltelec.consola.model";
 
 public final static Properties JPA_PROPERTIES = new Properties() {{
     put("hibernate.dialect", "org.hibernate.dialect.PostgreSQL10Dialect");

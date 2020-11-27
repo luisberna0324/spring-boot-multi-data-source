@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="./img/favicon.ico">
+        <title>PLACA TURNO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Soltelec s.a.s">
+        <link rel="stylesheet" href="./css/bootstrap.css">
+        <link rel="stylesheet" href="./css/PlacaTurno.css">
+        <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+    </head>
+    <body>
+        <header class="navbar-header navbar-fixed-top" style="background: #003333;">
+            <h1 class="text-center"><strong>BIENVENIDOS..!!! PLACA TURNO .!!!</strong></h1>       
+        </header>
+        <div class="container"> 
+            <div class="row">
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" id="contenido">
+                    <br>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="cabeceraPagConfiguracion">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <br>
+                            <img class="img-rounded" id="logoCDA" src="./img/logoCDA.JPG" alt="./img/logoCDA.JPG">
+                            <br>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="datos">    
+                                <table class="table-responsive">
+                                    <td><label class="control-label" for="nombres">CONDUCTOR:</label></td>
+                                    <td><input class="form-control" value=" " id="nombres" type="text"></td>
+                                </table>
+                                <table class="table-responsive">
+                                    <td><label class="control-label" for="nombres" style="margin-left: 18px;">VEHICULO:</label></td>
+                                    <td><input class="form-control" value=" " id="nombres" type="text"></td>
+                                </table>
+                            </div>  
+                        </div>
+                        <div class="col-lg-offset-3 col-xs-5 col-sm-5 col-md-5 col-lg-5" id="turnolisto">
+                            <h2 class="text-center"><strong>TURNO</strong></h2>
+                            <p class="text-center" id="nroTurno"><strong>01</strong></p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> 
+                        <div id="placaRecepcion" ></div>	
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </body>
+</html>

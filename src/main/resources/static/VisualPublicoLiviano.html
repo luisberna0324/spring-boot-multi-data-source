@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PLACA</title>
+        <link rel="icon" href="./img/favicon.ico">
+        <meta charset="UTF-8">
+        <meta name="author" content="Soltelec s.a.s">
+        <link rel="stylesheet" href="./css/bootstrap.css">
+        <link rel="stylesheet" href="./css/InspVisualLiviano.css">
+        <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container" id="ContenedorPrincipal"  ondblclick="changeCtxMiga()">
+            <div class="row" id="cabeceraPag">                
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+                <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3" id="placaRecepcion"></div>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12" id="bread">
+                    <ol class="breadcrumb">
+                        <li><a id="1" href="#" onclick="callCtxMigaDef(1)">Placa</a></li>
+                    </ol>
+                </div>
+            </div>
+            <div class="row">
+                <table id="responseDefectos" class="table-responsive" width="100%" border="1">
+                    <thead>
+                        <tr>
+                            <th style="height: 15px; "></th> 
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody >                  
+                    </tbody>
+                </table>      
+            </div>           
+        </div>
+        <input type="hidden" id="nroPrueba" value=""> 
+        <input type="hidden" id="fkUsuario" value="">
+        <script src="./js/AHAHlib2.js"></script>
+        <script src="./js/jquery.js"></script>
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/eModal.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/VisualPublicoLiviano.js"></script>
+        <script src="./js/ie10-viewport-bug-workaround.js"></script>
+    </body>
+</html>

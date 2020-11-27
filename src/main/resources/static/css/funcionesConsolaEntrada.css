@@ -1,0 +1,130 @@
+/* 
+    Created on : 5/04/2017, 12:55:20 PM
+    Author     : Software Soltelec sas realizado por Evelin Melendez
+*/
+body{
+    width:100%;
+    height:100%;
+    margin:0px;
+}
+header{
+     margin-bottom: 3%;
+     background-color:#D4D0C8;
+     border-radius:0px 0px 5px 5px;
+    -webkit-border-radius:0px 0px 5px 5px;
+    -moz-border-radius: 0px 0px 5px 5px;
+    -o-border-radius:0px 0px 5px 5px;
+}
+header h4{
+ color:#FFF;   
+}
+h1{
+ color:#FFF;	
+}
+.reply{
+ color:#FFF;
+ margin-left: 10px;
+ margin-top: -30px;	
+}
+.input-group{
+	width: 60%;	
+	margin-top: 30px;
+
+}
+.fondoFuncion{
+    display:block;
+    z-index:1050;
+    position:fixed;
+    top:0px; 
+    left:0px; 
+    height:100%;
+    overflow:visible; 
+    width:100%;
+    background:rgba(0, 0, 10, 0.5); }
+#bread{
+	margin-top:20px;
+    width:100%;
+    background: #003333;
+    height: 50px;
+}
+#cabeceraPag{
+    background:#003333;
+    width: 100%;
+    height: 50px;   
+}
+fieldset{
+margin-top:-15px;
+border-radius:5px 5px 5px 5px;
+-webkit-border-radius:5px 5px 5px 5px;
+-moz-border-radius: 5px 5px 5px 5px;
+-o-border-radius:5px 5px 5px 5px;
+-moz-box-sizing:border-box; 
+box-sizing:border-box; 
+background-color: #CECECC;
+}
+#contenedorPrincipal{	
+margin-top: 120px;
+padding-bottom: 15px;
+height: 450px;
+background:#003333;
+border-radius:5px 5px 5px 5px;
+} 
+#placaRecepcion{
+  margin-top:-35;
+}
+canvas {
+  display: block;
+  margin: 0 auto;  
+  background: $canvas-bg;
+  border-radius: 3px;
+  box-shadow: 0px 0px 15px 3px #ccc;
+  cursor:pointer;
+  background: #FFF;
+}
+
+table{
+ margin-top: 10px;
+ margin-bottom: 10px;
+ padding-top: 10px;
+ padding-bottom: 15px;
+ background-color: #CECECC;
+}
+#estilomodal{
+ background: #CCC;
+ height: 70px;
+}
+#modalEdoSicov{
+ background: #CCC;
+ height: 70px;  
+}
+#estiloCambioPlaca{
+ background: #CCC;
+ height: 70px;  
+}
+#estiloAnularRTM{
+ background: #CCC;
+ height: 105px;  
+}
+#estiloCorregirPin{
+ background: #CCC;
+ height: 70px;   
+}
+
+#logoCDA{
+   width:90px;
+   height:90px;
+   margin-left: 10px;
+   margin-top: 10px;
+}
+#logoEmpresa{
+   margin-left:15px;
+ }
+footer{
+ width: 100%;
+ height: 40px;
+ background: #003333;
+}
+p{
+    padding-top: 20px;
+    color: #ccc;
+}

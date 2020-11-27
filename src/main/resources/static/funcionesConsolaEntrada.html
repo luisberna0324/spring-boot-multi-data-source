@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>FUNCIONES DE CONSOLA DE ENTRADA</title>
+        <link rel="icon" href="./img/favicon.ico">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/bootstrap.css">        
+        <link rel="stylesheet" href="./css/funcionesConsolaEntrada.css">
+        <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+    </head>
+    <body>
+        <header class="navbar-header navbar-fixed-top" id="cabeceraPag">
+            <div class="pull-right">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="label"><a href="#"></a>
+                        <div style="color: #DCDCDC;" class="test-name" id="nombreUsuario"></div>
+                    </li>
+                    <li><img id="fotoUsuario" class="img-circle img-responsive pull-right" src="./img/user.png" alt="./fonts/user.png" style="margin-right: 40px; height: 50px; width: 45px; margin-top: 10px;">
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-center">
+                    <strong>FUNCIONES DE CONSOLA DE ENTRADA</strong>
+                </h4>
+            </div>
+            <div class="pull-left reply" onclick="menuPrincipal();"><i class="fa fa-2x fa-mail-reply"></i></div>
+        </header>
+        <div class="container" id="contenedorPrincipal">
+            <br>
+            <fieldset>
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <img id="logoCDA"  class="img-rounded img-responsive pull-left" src="./img/logoCDA.JPG" alt="./img/favicon.png" style="height: 80px; width: 80px;"> 
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
+                        <div class="input-group">
+                            <div class="input-group-addon"><a><i class="fa fa-search"></i></a></div>
+                            <input class="form-control text-uppercase" id="txtPlaca" type="text" placeholder="Escriba la Placa" onblur="servFindFuncConsola(this);"> 
+                        </div>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" id="placaRecepcion">
+                        </br>
+                    </div>
+                </div>
+                <hr>
+                <table class="table-responsive">
+                    <tr>
+                        <th class="pull-right"><label class="control-label">Revision:&nbsp;</label></th>
+                        <td id="tipoRevision"></td>
+                    </tr>
+                    <tr>
+                        <th class="pull-right"><label class="control-label">Clase:&nbsp;</label></th>
+                        <td id="claseVehiculo" ></td>
+                    </tr>
+                    <tr>
+                        <th class="pull-right"><label class="control-label">Propietario:&nbsp;</label></th>
+                        <td id="propietario" > </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <div class="col-xs-12 col-sm-12 col-md-12" id="bread">
+                <ol class="breadcrumb">
+                    <li><a href="#TipoRevision"  data-toggle="modal"  onclick="showTipoRevision();">Cambio Tipo-Revision</a></li>
+                    <li><a href="#EdoSicov"  data-toggle="modal" onclick="showCmbEdoSicov();" >Cambio EstadoSicov</a></li>
+                    <li><a href="#CambioPlaca" data-toggle="modal" onclick="showCmbPlaca();" >Corregir Placa</a></li>
+                    <li><a href="#AnularRTM" data-toggle="modal" onclick="showAnularRTM();">Anular RTM</a></li>
+                    <li><a href="#CorregirPin"  data-toggle="modal" onclick="showCorregirPin();">Corregir PIN</a></li>
+                </ol>
+            </div>
+            <br>
+            <table class="table-responsive table-condensed" border="1" width="100%">
+                <tr>
+                    <th style="background-color:#ffffff;">Nro. Hoja Prueba</th>
+                    <th style="background-color:#ffffff;">Fecha Ingreso</th>
+                    <th style="background-color:#ffffff;">Estado Sicov</th>
+                </tr>
+                <tr>
+                    <td id="consHoja"></td>
+                    <td id="fechaIngreso"></td>
+                    <td id="edoSicov"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="container">
+            <div  class="modal fade" id="TipoRevision">
+                <div  class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <div class="modal-title text-center"><h4><strong>CAMBIO DEL TIPO  DE REVISION</strong></h4></div>
+                        </div>       
+                        <div class="modal-body" id="estilomodal">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
+                                <select id="selectTipoRevision" class="form-control" name="">
+                                    <option value="RTM">R.T.M.</option>
+                                    <option value="PREVENTIVA">PREVENTIVA</option>							
+                                </select>
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button"  class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="closeTipoRevision();" >CAMBIAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div  class="modal fade" id="EdoSicov">
+                <div  class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <div class="modal-title text-center"><h4><strong>CAMBIO DE ESTADO SICOV</strong></h4></div>
+                        </div>       
+                        <div class="modal-body" id="modalEdoSicov">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
+                                <select id="selectEdoSicov" class="form-control" name="">
+                                    <option value="INICIADO">INICIADO</option>
+                                    <option value="Env1FUR">Env1FUR</option>
+                                    <option value="SINCRONIZADO">SINCRONIZADO</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button"  class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="funcionCmbEdoSicov();" >CAMBIAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div  class="modal fade" id="CambioPlaca">
+                <div  class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <div class="modal-title text-center"><h4><strong>CAMBIO DE PLACA</strong></h4></div>
+                        </div>       
+                        <div class="modal-body" id="estiloCambioPlaca">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
+                                <input class="text-uppercase" type="text" id="nroPlaca" value="" placeholder="Corregir Placa" >
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button"  class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="funcionCambioPlaca();" >APLICAR CAMBIO</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div  class="modal fade" id="AnularRTM">
+                <div  class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <div class="modal-title text-center"><h4><strong>ANULACION TIPO DE REVISION</strong></h4></div>
+                        </div>       
+                        <div class="modal-body" id="estiloAnularRTM">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <textarea class="form-control small text-uppercase" id="motivoAnulacion" rows="3"></textarea>						
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button"  class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="funcionAnularRTM();" >ANULAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div  class="modal fade" id="CorregirPin">
+                <div  class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <div class="modal-title text-center"><h4><strong>CORREGIR PIN</strong></h4></div>
+                        </div>       
+                        <div class="modal-body" id="estiloCorregirPin">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+
+                            </div>
+                            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-4 text-center">
+                                <input class="text-uppercase" type="text" id="nroPin" value="" placeholder="Ingrese el Nro PIN" >
+                            </div>
+                            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button"  class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="funcionCorregirPin();" >CORREGIR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="navbar navbar-fixed-bottom">
+            <span class="pull-left"><img id="logoEmpresa" src="./img/Soltelec.png" alt="" class="img-rounded" /></span>
+            <p class="text-center">Copyright<i class="fa fa-copyright"></i>2018 Soltelec sas </p>
+        </footer>
+        <input type="hidden" id="identificador" value="" required>
+        <script src="./js/AHAHlib2.js"></script>
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/eModal.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/ie10-viewport-bug-workaround.js"></script>
+        <script src="./js/funcionesConsolaEntrada.js"></script>
+    </body>
+</html>

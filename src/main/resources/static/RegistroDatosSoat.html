@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="./img/favicon.ico">
+        <title>Registro Datos SOAT</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/RegistroDatosSoat.css" type="text/css"/>
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="stylesheet" href="./css/bootstrap.css" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css"/>
+    </head>
+    <body>
+        <header class="navbar-header navbar-fixed-top">
+            <div> 
+                <a class="pull-left" href="#" style="margin-top: -10px;margin-left: 10px;"><img src="./img/Soltelec.png" alt="./img/Soltelec.png" class="img-rounded"></a>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="label"><div style="color:#DCDCDC;"  class="test-name" id="nombreUsuario"></div></li>
+                    <li><img id="fotoUsuario" class="img-circle img-responsive pull-right" src="./img/user.png" alt="./fonts/user.png" style="margin-right: 40px;height:50px;width:45px;margin-top:-2px;"></li>   
+                </ul>    
+                <div>
+                    <h4 class="cabecera text-center" ><strong>VERIFICACION DE DATOS DEL SOAT</strong></h4>
+                </div>
+            </div>           
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="ContenedorPrincipal">
+                 <form id="formRegistroSoat">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="cabeceraPag" >
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <img class="img-responsive pull-left"  src="./img/soat.png" alt="./img/soat.jpg" style="width: 60%;">  
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"> 
+                            <div id="placaRecepcion" ></div>	
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <img class="img-responsive pull-right"  src="./img/Cdgo.png" alt="./img/Cdgo.png" style="width: 25%;margin-top:10px;">   
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 espacio"></div>
+                    <br>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="table-responsive">
+                                <table class="table" border="1" width="100%">
+                                    <tr>
+                                        <th>Numero de Poliza</th>
+                                        <th>Fecha de Expedicion </th>
+                                        <th>Fecha Inicio de Vigencia</th>
+                                        <th>Fecha Fin de Vigencia</th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text"  value="" id="numeroPoliza" onkeypress="return beta(event)" ></td>
+                                        <td><input class="form-control"  type="date" id="txtExpedicion"> </td>
+                                        <td><input class="form-control"  type="date" id="txtInicioVig"></td>
+                                        <td><input class="form-control"  type="date" id="txtFinVig"></td>                              
+                                    </tr>
+
+                                </table>
+                                <div class="table-responsive">
+                                    <table class="table" border="1" width="100%">   
+                                        <tr>
+                                            <th>Entidad Que Expide El SOAT</th>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text"  value="" id="entidadSOAT" style="width:100%;"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>    
+                            <div class="col-xs-12 col-sm-12 col-md-12"></div>
+                            <br>
+                            <br>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 espacio">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                                    <button class="btn btn-lg  btn-primary" type="button" onclick="registrarDatosSoat()" >SIGUIENTE</button>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input id="fkRevision" class="form-control" style="width: 100%;" type="hidden" >
+                     </form>
+                </div>    
+            </div>
+        </div>
+        <footer class="navbar navbar-fixed-bottom">
+         <span class="pull-left"><img id="logoEmpresaCda" src="" alt=""  class="img-rounded" /></span>
+            <p class="text-center">Copyright&nbsp;<i class="fa fa-copyright"></i>&nbsp;2018 Soltelec sas </p>
+        </footer>
+        <script src="./js/AHAHlib2.js"></script>
+        <script src="./js/jquery.js"></script>
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/eModal.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/ie10-viewport-bug-workaround.js"></script>
+        <script src="./js/RegistroDatosSoat.js"></script>
+    </body>
+</html>

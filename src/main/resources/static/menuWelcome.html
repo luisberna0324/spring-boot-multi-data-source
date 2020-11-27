@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="./img/favicon.ico">
+        <title>SOLTELEC S.A.S</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1.0">
+        <meta name="author" content="Soltelec s.a.s">
+        <meta name="keywords" content="">
+        <meta name="description" content="inspeciones de motos,carros,vehiculos">
+        <link rel="stylesheet" href="./css/bootstrap.css">
+        <link rel="stylesheet" href="./css/menuWelcome.css">
+        <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" style="background: #003333;">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> 
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#" style="margin-top: -10px;"><img src="./img/Soltelec.png" alt="./img/Soltelec.png" class="img-rounded"></a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#registrarModal" data-toggle="modal" onclick="menuPrincipalSART()">SART&nbsp;&nbsp;<i class="fa fa-sitemap"></i></a></li>
+                        <li class="active"><a href="#" onclick="servFindFunciones()" >CONSOLA ENTRADA&nbsp;&nbsp;<i class="fa fa-laptop"></i></a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="label"><a href="#"></a><div class="test-name" id="nombreUsuario"></div></li>
+                        <li class="dropdown"><a class="navbar-brand dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img class="img-circle img-responsive pull-right" src="./img/user.png" alt="./img/user.png" style="height: 50px; width: 45px;" id="fotoUsuario"><span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"><span id="nick" class="glyphicon glyphicon-user"></span></a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#"><span id="nivel" class="glyphicon glyphicon-cog"></span></a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#" onclick="cierreSession();" ><span class="glyphicon glyphicon-off">&nbsp;Cerrar Sesion</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav> 
+        <nav class="navbar navbar-default sidebar" role="navigation">
+            <div class="container-fluid">            
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#bs-sidebar-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span> <span
+                            class="icon-bar"></span> <span class="icon-bar"></span> <span
+                            class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse"
+                     id="bs-sidebar-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#" onclick="beginProcesoPreRevision();">PLANILLA LISTAS&nbsp;<span style="font-size: 16px;" class="pull-right  showopacity glyphicon glyphicon-list-alt"></span></a></li>
+                        <li><a href="#" onclick="naturalezaRevision();" >PRE-REVISION&nbsp;&nbsp;<span style="font-size: 16px;" class="pull-right  showopacity glyphicon glyphicon-edit" ></span></a></li>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">IMPRESIONES&nbsp;<span class="caret"></span><span style="font-size: 16px;" class="pull-right showopacity glyphicon glyphicon-print"></span></a>
+                            <ul class="dropdown-menu forAnimate" role="menu">                                                                
+                                <li><a href="#modalOrdenTrabajo"  data-toggle="modal"  ><i class="fa fa-calendar" style="color: #000;"></i>&nbsp;Formato Pre-Revision</a></li>
+                            </ul>
+                            <ul class="dropdown-menu forAnimate" role="menu">                                                                
+                                <li><a href="#modalEstudioTiempo"  data-toggle="modal"  ><i class="fa fa-calendar" style="color: #000;"></i>&nbsp;Estudio Tiempo Muerto </a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">ESTADISTICAS&nbsp;<span class="caret"></span><span style="font-size: 16px;" class="pull-right showopacity glyphicon glyphicon-stats"></span></a>
+                            <ul class="dropdown-menu forAnimate" role="menu">                              
+                                <li><a  href="#modalEstadistica1eraVez" data-toggle="modal"><span style="font-size: 16px;" class="showopacity glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;RTM 1.era Vez</a></li>
+                                <li><a href="#modalMovRTM" data-toggle="modal"><span style="font-size: 16px;" class="showopacity glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;Mov. RTM </a></li>
+                                <li><a href="#modalAnalisisPruebas" data-toggle="modal"><span style="font-size: 16px;" class="showopacity glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;Analis de Pruebas </a></li>
+                                <li><a href="#modalINFORMEREVISIONES" data-toggle="modal"><span style="font-size: 16px;" class="showopacity glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;INFORME REVISIONES </a></li>  
+                                <li><a href="#modalRECEPCIONPISTA" data-toggle="modal"><span style="font-size: 16px;" class="showopacity glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;Informe DE RECEPCION A PISTA  </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+	<div class="container">
+		<div class="modal fade" id="modalOrdenTrabajo">
+			<form id="findPlaca" action="./ServicioProducto.do" method="post" enctype="application/x-www-form-urlencoded">
+			 <input type="hidden" id="data" name="data" value=""> 
+             <input type="hidden" id="entidad" name="entidad" value="">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<div class="modal-title text-center">
+								<h4>
+									<strong>IMPRESION DE ORDER DE TRABAJO</strong>
+								</h4>
+							</div>
+						</div>
+						<div class="modal-body">
+							<div class="form-group" id="findPlaca" action="./ServicioProducto.do" method="post" enctype="application/x-www-form-urlencoded">
+								<h4>
+									<strong>PLACA:</strong>
+								</h4>
+								<input type="text" id="nroPlacas" value=""
+									placeholder="Ingrese la Placa">
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary"
+								data-dismiss="modal" aria-hidden="true" onclick="findPlaca();">BUSCAR</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="container">
+		<div class="modal fade" id="modalEstudioTiempo">
+			<form id="estudioTiempo" action="./ServicioProducto.do" method="post" enctype="application/x-www-form-urlencoded">			  
+             <input type="hidden" id="entidad" name="entidad" value="">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<div class="modal-title text-center">
+								<h4>
+									<strong>ESTUDIO TIEMPO MUERTO</strong>
+								</h4>
+							</div>
+						</div>
+						<div class="modal-body">
+						    <div class="form-group" id="findF" action="./ServicioProducto.do" method="post" enctype="application/x-www-form-urlencoded">
+								<h4>
+									<strong>FECHA:</strong>
+								</h4>
+								<input class="form-control"  type="date" id="fechaInic" name="fechaInic" >
+							</div>
+						
+						
+							<div class="form-group" id="findPlaca" action="./ServicioProducto.do" method="post" enctype="application/x-www-form-urlencoded">
+								<h4>
+									<strong>Tipo Vehiculo:</strong>									
+								</h4>
+								<select id="tipoVehiculo" class="form-control" name="tipoVehiculo" style="width: 60%">
+                                       <option value="1">Liviano</option>
+                                       <option value="3">Pesado</option>
+                                       <option value="4">Motocicleta</option>
+                                       <option value="110">Taximetro</option>
+                                 </select>								
+							</div>							
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary"
+								data-dismiss="modal" aria-hidden="true" onclick="doEstudio();">ESTUDIAR</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="container">
+		<div class="modal fade" id="modalEstadistica1eraVez">
+			<form id="frmViewEstadistica" action="./ServicioProducto.do" method="post" enctype="application/x-www-form-urlencoded">
+			 <input type="hidden" id="data" name="data" value=""> 
+             <input type="hidden" id="entidad" name="entidad" value="InformeAprobReproHP">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-hidden="true">&times;</button>
+							<div class="modal-title text-center">
+								<h4>
+									<strong>ESTADISTICA RTM 1era. Vez</strong>
+								</h4>
+							</div>
+						</div>
+						<div class="modal-body">
+							<div class="form-group" id="findPlaca" action="./ServicioProducto.do" method="post" enctype="application/x-www-form-urlencoded">
+								<h4>
+									<strong>FECHA:</strong>
+								</h4>
+								<input class="form-control"  type="date" id="fechaInic" name="fechaInic" >
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary"
+								data-dismiss="modal" aria-hidden="true" onclick="viewEstaRtm();" >VISUALIZAR</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+   <div class="container">
+		<div class="modal fade" id="modalMovRTM">
+			<form id="frmViewMovRTM" action="./ServicioProducto.do" method="post" enctype="application/x-www-form-urlencoded">
+			 <input type="hidden" id="data" name="data" value=""> 
+             <input type="hidden" id="entidad" name="entidad" value="InformeMovRTM">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<div class="modal-title text-center">
+								<h4>
+									<strong>Registro de Entrada RTM</strong>
+								</h4>
+							</div>
+						</div>
+						<div class="modal-body">
+							<div class="form-group" id="findPlaca" action="./ServicioProducto.do" method="post" enctype="application/x-www-form-urlencoded">
+								<h4>
+									<strong>FECHA:</strong>
+								</h4>
+								<input class="form-control"  type="date" id="fechaInic" name="fechaInic" >
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary"
+								data-dismiss="modal" aria-hidden="true" onclick="viewMovRTM();" >VISUALIZAR</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="modal fade" id="modalAnalisisPruebas">
+			<form id="frmViewAnaliTest" action="./ServicioProducto.do" method="post" enctype="application/x-www-form-urlencoded">
+			 <input type="hidden" id="data" name="data" value=""> 
+             <input type="hidden" id="entidad" name="entidad" value="InformeAnalisisPruebas">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<div class="modal-title text-center">
+								<h4>
+									<strong>Analisis Pruebas</strong>
+								</h4>
+							</div>
+						</div>
+						<div class="modal-body">
+							<div class="form-group" id="findPlaca" action="./ServicioProducto.do" method="post" enctype="application/x-www-form-urlencoded">
+								
+								<table class="table-responsive " width="97%">
+                                  <tr>
+                                      <td style="text-align: right; padding-right: 1%;"><label class="control-label" for=""><strong>Desde :</strong></label></td>
+                                      <td style="text-align: right; padding-right: 1%;"> <input class="form-control"  type="date" id="fechaInic" name="fechaInic" ></td>
+                                      <td style="text-align: right; padding-right: 1%;"><label class="control-label" for=""><strong>Hasta:</strong></label></td>
+                                      <td style="text-align: right; padding-right: 1%;"> <input   type="date" id="fechaFin" name="fechaFin" ></td>
+                                  </tr>
+                                  <tr>
+                                      <td style="text-align: right; padding-right: 1%;">&nbsp;</td>
+                                      <td style="text-align: right; padding-right: 1%;">&nbsp; </td>
+  
+  
+  
+                                      <td style="text-align: right; padding-right: 1%;">&nbsp; </td>
+                                      <td style="text-align: right; padding-right: 1%;"> &nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                      <td style="text-align: right; padding-right: 1%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                      <td style="text-align: right; padding-right: 1%;"><label class="control-label" for=""><strong>TIPO PRUEBA :</strong></label></td>
+                                      <td style="text-align: right; padding-right: 1%;"><select id="tipoPrueba" class="form-control" name="tipoPrueba" style="width: 95%">
+                                              <option value="1">VISUAL</option>
+                                              <option value="2">LUCES</option>
+                                              <option value="4">DESVIACION</option>
+                                              <option value="5">FRENOS</option>
+                                              <option value="6">SUSPENSION</option>
+                                              <option value="8">GASES</option>
+                                              <option value="9">TAXIMETRO</option>
+                                          </select>
+                                      </td>                                      
+                                  </tr> 
+                              </table>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="viewAnaliTest();" >VISUALIZAR</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+  <div class="container">
+		<div class="modal fade" id="modalINFORMEREVISIONES">
+			<form id="frmViewInforRevi" action="./ServicioProducto.do" method="post" enctype="application/x-www-form-urlencoded">
+			 <input type="hidden" id="data" name="data" value=""> 
+             <input type="hidden" id="entidad" name="entidad" value="informeCntRTMyPrevent">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<div class="modal-title text-center">
+								<h4>
+									<strong>INFORME REVISIONES EFECTUADAS</strong>
+								</h4>
+							</div>
+						</div>
+						<div class="modal-body">
+							<div class="form-group" id="findPlaca" action="./ServicioProducto.do" method="post" enctype="application/x-www-form-urlencoded">
+								
+								<table class="table-responsive " width="97%">
+                                  <tr>
+                                      <td style="text-align: right; padding-right: 1%;"><label class="control-label" for=""><strong>Desde :</strong></label></td>
+                                      <td style="text-align: right; padding-right: 1%;"> <input class="form-control"  type="date" id="fechaInic" name="fechaInic" ></td>
+                                      <td style="text-align: right; padding-right: 1%;"><label class="control-label" for=""><strong>Hasta:</strong></label></td>
+                                      <td style="text-align: right; padding-right: 1%;"> <input   type="date" id="fechaFin" name="fechaFin" ></td>
+                                  </tr>
+                                  <tr>
+                                      <td style="text-align: right; padding-right: 1%;">&nbsp;</td>
+                                      <td style="text-align: right; padding-right: 1%;">&nbsp; </td>
+  
+  
+  
+                                      <td style="text-align: right; padding-right: 1%;">&nbsp; </td>
+                                      <td style="text-align: right; padding-right: 1%;"> &nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                      <td style="text-align: right; padding-right: 1%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                      <td style="text-align: right; padding-right: 1%;"></td>
+                                      <td style="text-align: right; padding-right: 1%;">        </td>                                     
+                                  </tr> 
+                              </table>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="viewInforRevi();" >VISUALIZAR</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+    <div class="container">
+		<div class="modal fade" id="modalRECEPCIONPISTA">
+			<form id="frmViewInforRecPista" action="./ServicioProducto.do" method="post" enctype="application/x-www-form-urlencoded">
+			 <input type="hidden" id="data" name="data" value=""> 
+             <input type="hidden" id="entidad" name="entidad" value="informeRecPista">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<div class="modal-title text-center">
+								<h4>
+									<strong>INFORME DE RECEPCION A PISTA</strong>
+								</h4>
+							</div>
+						</div>
+						<div class="modal-body">
+							<div class="form-group" id="findPlaca" action="./ServicioProducto.do" method="post" enctype="application/x-www-form-urlencoded">
+								<h4>
+									<strong>FECHA:</strong>
+								</h4>
+								<input class="form-control"  type="date" id="fechaInic" name="fechaInic" >
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="viewRecPista();" >VISUALIZAR</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	       
+               
+        <footer class="navbar navbar-fixed-bottom">
+            <div class="btn-group dropup pull-right" id="botonConfiguracion">
+                <button type="button" class="btn btn-default dropdown-toggle"
+                        data-toggle="dropdown">
+                    <i class="fa fa-gears fa-3x "></i>
+                    <span class="caret"></span>
+                    <span class="sr-only"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li style="background: red;"><a href="#"></a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" id="confiCda" onclick="viewFrmCda()" ><span class="glyphicon glyphicon-wrench">&nbsp;<label>CDA</label></span></a></li>
+                </ul>
+            </div>
+            <div>      
+            </div>
+            <span class="pull-left"><img id="logoCDA" src="./img/logoCDA.JPG" alt="" class="img-rounded"></span>
+            <p class="text-center">Copyright<i class="fa fa-copyright"></i>&nbsp;2018  Soltelec sas </p>
+        </footer>
+        <input type="hidden" id="identificador" value="" required>
+        <script src="./js/AHAHlib2.js"></script>
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/eModal.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/ie10-viewport-bug-workaround.js"></script>
+        <script src="./js/menuWelcome.js"></script>
+    </body>
+</html>
+

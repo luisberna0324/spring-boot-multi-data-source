@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="./img/favicon.ico">
+        <title>SOLTELEC S.A.S</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1.0">
+        <meta name="author" content="Soltelec s.a.s">
+        <meta name="keywords" content="">
+        <meta name="description" content="inspeciones de motos,carros,vehiculos">
+        <link rel="stylesheet" href="./css/bootstrap.css">
+        <link rel="stylesheet" href="./css/index.css">
+        <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" style="background: #003333;">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span> <span
+                            class="icon-bar"></span> <span class="icon-bar"></span> <span
+                            class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#" style="margin-top: -10px;"><img src="./img/Soltelec.png" alt="./img/Soltelec.png" class="img-rounded"></a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#registrarModal" data-toggle="modal" onclick="">RECEPCION&nbsp;&nbsp;<i class="fa fa-pencil-square-o"></i></a></li>
+                        <li class="active"><a href="#" onclick="test();" >CONSOLA ENTRADA&nbsp;&nbsp;<i class="fa fa-laptop"></i></a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="label"><a href="#"></a><div class="test-name" id="nombreUsuario"></div></li>
+                        <li class="dropdown"><a class="navbar-brand dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img class="img-circle img-responsive pull-right" src="./img/user.png" alt="./img/user.png" style="height: 50px; width: 45px;" id="fotoUsuario"><span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"><span id="nick" class="glyphicon glyphicon-user"></span></a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#"><span id="nivel" class="glyphicon glyphicon-cog"></span></a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#" onclick="cierreSession();" ><span class="glyphicon glyphicon-off">&nbsp;Cerrar Sesion</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>    
+        <div class="container">
+            <div  id ="fondoAutentificacion" class="fondoFuncion">
+                <div id="capaAutentificacion" class="container">
+                    <div class="row" style="margin: auto auto; width: 60%; border-radius: 7px; margin-top: 100px; background-color: #FFFFFF;">
+                        <div class="navbar ">
+                            <div class="navbar navbar-inner" style="background: #003333">
+                                <a href="#" class="brand" style=" margin-left: 15px;margin-top: -10px;"><img id="logoEmpresa" src="./img/Soltelec.png" alt="" class="img-rounded">
+                                </a>
+                                <div class="text-right"  style="margin-top: -35px; margin-right: 1px; color: #B8B8B8;">
+                                    <h5>
+                                        <strong>NIT:900321814-0</strong>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4" style="margin-top: -15px; background-color: #FFFFFF;">
+                            <h4 style="text-align: center;">Registro Usuario</h4>
+                            <div class="checkbox"></div>
+                            <input type="text" id="inputUsuario" value="jaime" style="margin: auto auto; width: auto;" class="form-control" placeholder="Usuario" required autofocus>
+                            <div class="checkbox"></div>
+                            <label class="sr-only"><i class="fa fa-user">Password</i></label>
+                            <input type="password" id="inputPassword" style="margin: auto auto; width: auto;" value="123" class="form-control" placeholder="Password" required>
+                            <div class="checkbox"></div>
+                            <button class="btn btn-primary" style="margin-left: 45%; margin-bottom: 5px;" type="submit"   onclick="autenti();">Entrar</button>
+                        </div>
+                        <div class="col-md-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- fin del body container -->
+        <div class="container"> <!-- inicio del body container de Reg. Placa-->	
+            <div id="fondoCapabusqRegRevxPlaca" class="">
+                <div id="capabusqRegRevxPlaca" style="display:none" class="container">
+                    <div class="row" style="margin: auto auto; width: 60%; border-radius: 7px; margin-top: 100px; background-color: #FFFFFF;">					
+                        <div class="navbar ">
+                            <div class="navbar navbar-inner" style="background: #003333">
+                                <a href="#" class="brand"  style=" margin-left: 15px;margin-top: -10px;"><img id="logoEmpresa" src="./img/Soltelec.png" alt="" class="img-rounded">  </a>
+                                <div class="text-right"
+                                     style="margin-top: -35px; margin-right: 1px; color: #B8B8B8;">
+                                    <h5>
+                                        <strong>NIT:900321814-0</strong>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <form id="findPlaca" action="./ServicioProducto.do" method="post" enctype="application/x-www-form-urlencoded" >
+                            <input type="hidden" id="data" name="data" value="" >
+                            <input type="hidden" id="entidad" name="entidad" value="" >    
+                            <div class="col-md-4" style="margin-top: -5px; background-color: #FFFFFF;"> 
+                                <h4 style="text-align: center;">Ingreso Placa: </h4>
+                            </div>								
+                            <div class="col-md-4">
+                                <input type="text" id="inputPlaca" style="margin: auto auto; width: auto;" class="form-control" placeholder="placa" required autofocus> 
+                            </div>													
+                            <div class="checkbox"></div>
+                            <button class="btn btn-primary" style='margin-left: 45%; margin-bottom: 5px;' type="button" onclick="findPlaca();" > Buscar</button>
+                        </form>								
+                    </div>
+                </div>
+            </div>
+        </div> <!-- fin del body container de Reg. Placa-->
+        <nav class="navbar navbar-default sidebar" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#bs-sidebar-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span> <span
+                            class="icon-bar"></span> <span class="icon-bar"></span> <span
+                            class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse"
+                     id="bs-sidebar-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#" onclick="beginProcesoPreRevision();">CONSULTAR DATOS&nbsp;<span style="font-size: 16px;" class="pull-right  showopacity glyphicon glyphicon-user"></span></a></li>
+                        <li><a href="#" onclick="viewOrdenPreRev();" >PRE-REVISION&nbsp;&nbsp;<span style="font-size: 16px;" class="pull-right  showopacity glyphicon glyphicon-list-alt"></span></a></li>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">IMPRESIONES&nbsp;<span class="caret"></span><span style="font-size: 16px;" class="pull-right showopacity glyphicon glyphicon-print"></span></a>
+                            <ul class="dropdown-menu forAnimate" role="menu">
+                                <li><a href="#" onclick="test()"><i class="fa fa-calendar" style="color: #000;"></i>&nbsp;Impresion por Fecha</a></li>
+                                <li><a href="#" onclick="cargaImprePlaca()"><span style="font-size: 16px;" class=" glyphicon glyphicon-sound-5-1"></span>&nbsp;Impresion por Placa</a></li>
+                                <li><a href="#" onclick="cargaPreRevision()"><i class="fa fa-calendar" style="color: #000;"></i>&nbsp;Formato Pre-Revision</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <footer class="navbar navbar-fixed-bottom">
+            <span class="pull-right"><img id="logoEmpresa" src="./img/ceda_Cucuta.png" alt="" class="img-rounded" style="width: 90px; height: 53px; margin-right: 25px; margin-top: 5px;"></span>
+            <p class="text-center">@2018 copyringht Soltelec s.a.s</p>
+        </footer>
+        <input type="hidden" id="identificador" value="" required>
+        <script src="./js/AHAHlib2.js"></script>
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/eModal.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/ie10-viewport-bug-workaround.js"></script>
+        <script src="./js/InspVisual.js"></script>
+    </body>
+</html>

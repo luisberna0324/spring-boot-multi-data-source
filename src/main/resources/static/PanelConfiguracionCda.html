@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="./img/favicon.ico">
+        <title>PANEL CONFIGURACION CDA</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Soltelec s.a.s">
+        <link rel="stylesheet" href="./css/bootstrap.css">
+        <link rel="stylesheet" href="./css/PanelConfiguracionCda.css">
+        <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+    </head>
+    <body>
+        <header class="navbar-header navbar-fixed-top">
+            <nav class="navbar navbar-default navbar-fixed-top" style="background: #003333;">
+            </nav>      
+        </header>
+        <div class="container"> 
+            <div class="row">3
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="contenido">
+                    <br>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="cabeceraPagConfiguracion">
+                        <br> 
+                        <img class="img-rounded" id="logoCDA" src="./img/logoCDA.JPG" alt="./img/logoCDA.JPG">
+                        <h4 class="text-center">CONFIGURACION EN EL SISTEMA</h4>
+                        <br>
+                    </div> 
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 espacio"></div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">  
+                                <h4>IP del Servidor Sicov:</h4>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><a><span class="glyphicon glyphicon-object-align-bottom"></span></a></div>
+                                    <input class="form-control" id="ipSicov" type="text" value="" placeholder="IP del Servidor Sicov" required autofocus>
+                                </div>   
+                            </div>
+                        </div> 
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <h4>Director Tecnico Responsable:</h4>
+                                <div class="input-group-addon"><a><span class="glyphicon glyphicon-user"></span></a></div>
+                                <div class="form-group">
+                                    <select class="form-control" id="directorTecnico"  name="" onchange="" >
+                                        
+                                        
+                                    </select>   
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 espacio"></div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 espacio"></div>
+                            </div>
+                            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
+                        </div>
+                        <br>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                            <button class="btn btn-success btn-lg"  type="submit" onclick="setPanelConfiguracion();">Aplicar Cambios</button>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 espacio"></div>
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
+                </div>  
+            </div>
+        </div>
+            <footer class="navbar navbar-fixed-bottom">
+                <span class="pull-left"><img id="logoEmpresa" src="./img/Soltelec.png" alt="" class="img-rounded"></span>
+                <p class="text-center">Copyright<i class="fa fa-copyright"></i>2018  Soltelec sas </p> 
+            </footer>
+            <input type="hidden" id="identificador" value="" required>
+             <script src="./js/AHAHlib2.js"></script>
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/eModal.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/ie10-viewport-bug-workaround.js"></script>
+        <script src="./js/PanelConfiguracionCda.js"></script>            
+    </body>
+</html>

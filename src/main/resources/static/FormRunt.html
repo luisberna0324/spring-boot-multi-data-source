@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="./img/favicon.ico">
+        <title>Consulta Runt</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/bootstrap.css" type="text/css"/>
+        <link rel="stylesheet" href="./css/FormRunt.css" type="text/css"/>
+       <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+        
+    </head>
+    <body>
+        <div class="container">
+            <div id="fomatoRunt">
+                <header class="navbar-header navbar-fixed-top" id="cabeceraPag">
+                    <div class="pull-left">
+                        <ul>
+                            <li><a href="#">&nbsp;</a><i class="fa fa-mail-reply fa-2x" title="Retorno al Menu" onclick="returnMenuMain();"  ></i></li> 
+                        </ul>
+                    </div>
+                    <div class="pull-left">
+                        <ul>
+                            <li><a href="#" >&nbsp;<i id="regManual" class="fa fa-pencil-square-o fa-2x" title="Registro Manual" ontouchstart="registroManual(event);" onclick="registroManual(event);" ></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="pull-right">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="label"><a href="#"><div style="color:#DCDCDC;" class="test-name" id="nombreUsuario"></div></a></li>
+                            <li><img id="fotoUsuario" class="img-circle img-responsive pull-right" src="./img/user.png" alt="./fonts/user.png" style="margin-right: 40px;height:50px;width:45px;margin-top:10px;"  id="fotoUsuario"></li>   
+                        </ul>
+                    </div> 
+                </header>
+                <div class="row" >
+                        <form id="formR" >
+                        <div id="registrarModalPro" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-md-12">
+                                                <img class="pull-left"  id="logoEmpresa" src="./img/Soltelec.png" >
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
+                                            <div class="col-xs-1 col-md-1"></div>
+                                            <div class="col-xs-10 col-md-10 separador">
+                                                <spam class="text-center"><strong>&nbsp;DATOS DEL VEHICULO A CONFIRMAR</strong></spam>
+                                            </div>
+                                            <div class="col-xs-1 col-md-1"></div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        <table class="table-responsive " width="70%">
+                                            <tr>
+                                                <td><label class="control-label" for="placa"><strong>PLACA:</strong></label></td>
+                                                <td><input id="placaRunt" class="form-control text-uppercase" style="width:60%;" type="text"  placeholder="Placa" maxlength="8"></td>
+                                            </tr>                                            
+                                            <tr>
+                                                <td><label class="control-label" for="combustible"><strong>T/REVISION:</strong></label></td>                                                
+                                                <td> <select id="tipoRevision" class="form-control" name="" style="width:75%">
+                                                        <option value="true">R.T.M.</option>  
+                                                        <option value="false">Preventiva</option>                                                        
+                                                    </select>
+                                                 </td>                                                
+                                            </tr>
+                                        </table>
+                                        <div class="row">
+                                            <div class="col-xs-1 col-md-1"></div>
+                                            <div class="col-xs-10 col-md-10 separador">
+                                                <spam class="text-center"><strong>&nbsp;REGISTRE LOS SIGUIENTES DATOS DEL PROPIETARIO</strong></spam>
+                                            </div>
+                                            <div class="col-xs-1 col-md-1"></div>    
+                                        </div>
+                                        <table  class="table-responsive " width="100%">
+                                          
+                                        </table>
+                                        <table class="table-responsive " width="100%">
+                                            <td style="width:15%;" ><label class="control-label" for="direccion">NOMBRES:</label></td>
+                                            <td><input class="form-control" style="width:90%;" id="nombreRunt" type="text" size="30" maxlength="30" placeholder="Nombres"></td>
+                                        </table>
+                                        <table class="table-responsive " width="100%">
+                                            <td style="width:15%;" ><label class="control-label" for="apellidoRunt">APELLIDOS:</label></td>
+                                            <td><input class="form-control" style="width:90%;" id="apellidoRunt" type="text" size="30" maxlength="30" placeholder="Apellidos"></td> 
+                                        </table>    
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button id="myBtn2" type="button" class="btn btn-default" data-dismiss="modal" onclick ="registroDatosRunt();" >&nbsp;Guardar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                  </form>
+                </div>
+                <div>
+                <img id="fotoUsuario" class="editable" src="./img/user.png" alt="./fonts/user.png" style="margin-right: 40px;height:50px;width:45px;margin-top:10px;"  id="fotoUsuario">
+                    <iframe id="iframes"  src="" role="presentation" scrolling="si" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" width="100%" height="1440"></iframe>
+                    <input type= "hidden" id="identificador"  value="">
+                    <input type= "hidden" id="idPreRevision"  value="">
+                </div>
+            </div> 
+        </div>
+            <script src="./js/AHAHlib2.js"></script>
+            <script src="./js/jquery.js"></script>
+            <script src="./js/jquery.min.js"></script>
+            <script src="./js/bootstrap.min.js"></script>        
+            <script src="./js/eModal.min.js"></script>
+            <script src="./js/FormRunt.js"></script>
+    </body>
+</html>

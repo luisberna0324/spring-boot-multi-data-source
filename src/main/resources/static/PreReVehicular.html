@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="./img/favicon.ico">
+        <title>Pre-Revision Vehicular</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" media="(max-width: 800px)" href="./css/PreReVehicular" />
+        <link rel="stylesheet" href="./css/PreReVehicular.css" type="text/css" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="stylesheet" href="./css/bootstrap.css" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css" />
+    </head>
+    <body>
+        <header class="navbar-header navbar-fixed-top">
+            <div> 
+                <a class="pull-left" href="#" style="margin-top: -10px;margin-left: 10px;"><img src="./img/Soltelec.png" alt="./img/Soltelec.png" class="img-rounded"></a>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="label"><div style="color:#DCDCDC;"  class="test-name" id="nombreUsuario"></div></li>
+                    <li><img id="fotoUsuario" class="img-circle img-responsive pull-right" src="./img/user.png" alt="./fonts/user.png" style="margin-right: 40px;height:50px;width:45px;margin-top:-2px;"  id="fotoUsuario"></li>   
+                </ul>    
+                <div>
+                    <h4 class="cabecera text-center" ><strong>PRE-REVISION DEL VEHICULO</strong></h4>
+                </div>
+            </div>           
+        </header>
+        <nav class="navbar navbar-default sidebar" role="navigation">
+            <div class="navbar-default">
+                <ul class="nav navbar-nav">
+                    <li class="text-center" id="placaRecepcion"></li>
+                    <li><a id="frontal" href="#" onclick="PreRevisionFrontal();">FRONTAL&nbsp;</a></li>
+                    <li><a id="derecha" href="#" onclick="PreRevisionLateralDer();">DERECHA&nbsp;</a></li>
+                    <li><a id="izquierda" href="#" onclick="PreRevisionLateralIzq();">IZQUIERDA&nbsp;</a></li>
+                    <li><a id="trasera" href="#" onclick="PreRevisionTrasera();">TRASERA&nbsp;</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container" >
+            <div class="row">
+                <div class ="col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3" style="margin-top: 65px; height: 1150px;background: #fff;border-radius:2px 2px 10px 10px;box-shadow:2px 1px 10px 2px #333333;"> 
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 cabecera">
+                                <i id="regNovedad" class="bottom pull-left fa fa-save fa-3x"
+                                   title="" onclick="registroNovedadVehicular();"></i><i id=""
+                                   class="bottom pull-right fa fa-angle-double-right  fa-3x" title=""  onclick="followSing();"></i>
+                                   <i id="takeFoto" style="display: none" class="bottom pull-left fa fa-archive fa-3x" title="" onclick="retCapa();"></i> 
+                                     <i class="bottom pull-left  fa fa-camera fa-3x" title="" onclick="showCamara()"></i>
+                                <h5 id="lblDeContexto" class="text-center">
+                                    <strong>PRE-REVISION FRONTAL DEL VEHICULO</strong>
+                                </h5>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 espacios"></div>
+                            <div id="capaEdoVehiculo" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <form id="frmUploadFirma" method="post" enctype="multipart/form-data"></form>
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <h2>
+                                        <label class="radio-inline"><input type="radio" value="0;Abolladura" name="novedad">&nbsp;&nbsp;Abolladura</label>
+                                    </h2>
+                                </div>
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <h2>
+                                        <label class="radio-inline"><input type="radio"
+                                                                           value="1;Rayon" name="novedad">&nbsp;&nbsp;Rayon</label>
+                                    </h2>
+                                </div>
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <h2>
+                                        <label class="radio-inline"><input type="radio" value="2;Golpe" name="novedad">&nbsp;&nbsp;Golpe</label>
+                                    </h2>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 espacios"></div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <h2>
+                                            <label for="textEditablePreReVehicular">Observaciones:</label>
+                                        </h2>
+                                        <textarea class="form-control small text-uppercase"
+                                                  id="obsPreReVehicular"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="capaCamara" style="display: none;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <video id="video" width="280%" height="190%" onclick="showCamara()"> </video>
+                                </div>
+                            </div>
+                            <div id="capaFoto" style="display: none;"
+                                 class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <canvas id="canvas" width="640" height="380"> </canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container"> <!-- body proccessing transaccion -->
+                        <div  id ="fondoBodyProccesing" class="fondoFuncion">
+                            <div id="capaBodyProccesing" style="margin-left:14px;" class="container">
+                                <div class="row" style="margin: auto auto; margin-left:10px; width: 70%; border-radius: 7px; margin-top: 7px; background-color: #FFFFFF;">
+                                    <div class="navbar ">
+                                        <div class="navbar navbar-inner" style="background: #003333">
+                                            <a href="#" class="brand" style=" margin-left: 15px;margin-top: 10px;"><img id="logoEmpresa" src="./img/logoCDA.JPG" alt="" style="width: 90px; height: 53px; margin-top: 5px;" class="img-rounded">
+                                            </a>
+                                            <div class="text-center"  style="margin-top: 18px; margin-right: 1px; color: #B8B8B8;">
+                                                <h5>
+                                                    <strong> Procesando su Solicitud..!</strong>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4"></div>                                       
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- fin del body condiciones de aprobado -->
+                </div>
+            </div>
+        </div>
+        <footer class="navbar navbar-fixed-bottom">
+            <span class="pull-left"><img id="#" src="" alt=""
+                                         class="img-rou</div>nded" /></span>
+            <p class="text-center">Copyright<i class="fa fa-copyright"></i>2018 Soltelec sas </p>
+        </footer>
+        <canvas id="canvas" height="50" ontouchstart="" ontouchmove="" 	ontouchend="">Su navegador no soporta canvas :( </canvas>
+        <script src="./js/AHAHlib2.js"></script>
+        <script src="./js/jquery.js"></script>
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/eModal.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/ie10-viewport-bug-workaround.js"></script>
+        <script src="./js/PreReVehicular.js"></script>
+    </body>
+</html>

@@ -1,9 +1,12 @@
 spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
   datasource-write:
     driver-class-name: org.postgresql.Driver
-    jdbc-url: jdbc:postgresql://localhost:5432/demo
+    jdbc-url: jdbc:postgresql://134.209.115.224:5432/demo
     username: 'postgres'
-    password: 'postgres_user_for_db_write'
+    password: 'postgres'
     platform: postgresql
     hikari:
       idle-timeout: 10000
@@ -12,11 +15,11 @@ spring:
       pool-name: WriteHikariPool
 
   datasource-read:
-    driver-class-name: org.postgresql.Driver
-    jdbc-url: jdbc:postgresql://localhost:5433/demo
-    username: 'postgres'
-    password: 'postgres_user_for_db_read'
-    platform: postgresql
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://134.209.115.224:3306/db_cda
+    username: 'luis'
+    password: 'luis'
+    platform: mysql
     hikari:
       idle-timeout: 10000
       maximum-pool-size: 10

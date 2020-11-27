@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Facturacion e Ingreso</title>
+        <link rel="icon" href="./img/favicon.ico">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Soltelec s.a.s">
+        <meta name="keywords" content="moto,carro,pesado,liviano,">
+        <meta name="description" content="inspeciones de motos,carros,vehiculos">
+        <link rel="stylesheet" href="./css/IngFacPin.css">
+        <link rel="stylesheet" href="./css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+    </head>
+    <body>
+        <header class="navbar-header navbar-fixed-top" id="cabeceraPag">
+            <div class="pull-left"><img src="./img/Soltelec.png" alt="./img/Soltelec.png" class="img-rounded"></div>
+            <div class="pull-right">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="label"><a href="#"></a>
+                        <div style="color: #DCDCDC;" class="test-name" id="nombreUsuario"></div></li>
+                    <li><img id="fotoUsuario" class="img-circle img-responsive pull-right" src="./img/user.png" alt="./fonts/user.png"  style="margin-right: 40px; height: 50px; width: 45px; margin-top: 10px;"></li>
+                </ul>
+            </div>
+        </header>
+        <div class="container">
+        <div class="row">
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="ContenedorPrincipal">
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+                <form id="frmChecBox" action="" >
+                    <img class="img-rounded img-responsive pull-left" src="./img/logoCDA.JPG" alt="./fonts/user.png"  style="height: 100px; width: 105px;">
+                    <hr>
+                    <h4><strong>&nbsp;&nbsp;Antes de Autorizar el Vehiculo a Pista Verifique SI:</strong></h4>
+                    <hr>
+                    <div class="col-xs-12  col-sm-12 col- d-12" style="margin-top: 40px;">
+                        <div  style="margin-top:18px; "><input class="pull-right" type="checkbox" name="" id="facturo" value="" onclick="showNroFactura(this);" > </div>
+                        <div  style="margin-top: -15px;margin-left:10px;"><h2 class="checkbox-inline"> &nbsp;&nbsp; YA FACTURO.??</h2></div>
+                        <div id="divFactura" class="col-xs-12  col-sm-12 col-md-12" style="margin-top: 15px; visibility:hidden">
+                            <div  style="margin-top: -15px;margin-left:10px;"><h2 class="checkbox-inline"> &nbsp;&nbsp; Nro. Factura: <input type="text" id="nroFactura" value="" placeholder="Nro. Factura"></h2></div>
+                        </div>                            
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12" style="margin-top: 30px;">
+                        <div  style="margin-top:18px; "> <input type="checkbox" name="" id="pinSicov" value=""> </div>
+                        <div  style="margin-top: -15px;margin-left:10px;"><h2 class="checkbox-inline"> &nbsp;&nbsp;INICIO PIN EN SICOV..??</h2></div>
+                    </div>
+                    <div class="col-xs-12 col-md-12 col-lg-12"></div>
+                    <div class="col-xs-12 col-md-12 col-lg-12 text-center">
+                        <input class="btn btn-lg btn-primary"  type="button" onclick="validacionBeforeTrasmision();" value="GUARDAR" style="margin-top: 30px;">
+                        <div class="col-xs-12 col-md-12 col-lg-12"></div>
+                    </div>
+                    <div class="col-xs-12 col-md-12 col-lg-12"></div>                      
+                </form>
+                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+            </div>
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+        </div>
+    </div>
+    <div class="container"> <!-- body proccessing transaccion -->
+        <div  id ="fondoBodyProccesing" class="fondoFuncion">
+            <div id="capaBodyProccesing" style="margin-left:14px;" class="container">
+                <div class="row" style="margin: auto auto; margin-left:10px; width: 70%; border-radius: 7px; margin-top: 7px; background-color: #FFFFFF;">
+                    <div class="navbar ">
+                        <div class="navbar navbar-inner" style="background: #003333">
+                            <a href="#" class="brand" style=" margin-left: 15px;margin-top: 10px;"><img id="logoEmpresa" src="./img/logoCDA.JPG" alt="" style="width: 90px; height: 53px; margin-top: 5px;" class="img-rounded">
+                            </a>
+                            <div class="text-center"  style="margin-top: 18px; margin-right: 1px; color: #B8B8B8;">
+                                <h5>
+                                    <strong> Procesando su Solicitud..!</strong>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>                                       
+                </div>
+            </div>
+        </div>
+    </div> <!-- fin del body condiciones de aprobado -->
+    <form id="frmAutorizacionAPista"  method="post" enctype="multipart/form-data">
+    </form>
+    <footer class="navbar navbar-fixed-bottom">
+        <span class="pull-left"><img id="logoEmpresa" src="./img/logoCDA.jpg" alt="" class="img-rounded" style="width: 90px; height: 53px; margin-left: 25px; margin-top: 5px;" /></span>
+        <p class="text-center">Copyright <i class="fa fa-copyright"></i> 2018 Soltelec sas </p> 
+    </footer>
+    <script src="./js/AHAHlib2.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/eModal.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/IngFacPin.js"></script>
+    <script src="./js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+/* 
+    Created on : Jul 7, 2017, 10:48:41 AM
+    Author     : Soporte@soltelec.com
+*/
+body {
+    margin: 0;
+    width: 100%;
+}
+header{
+    width:100%;
+    background: #003333;
+    height:50px;
+    }
+header i {
+   color:#fff;
+}    
+img{
+   width:90px;
+   height:45px;
+   margin-left:25px;
+}
+ .espacios{
+   height: 20px;  
+}
+#contenido{
+     margin-top: 120px;
+     width: 40%;
+     height: 435px;
+     background:#FFFFFF;
+     border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -moz-border-radius:10px 10px 10px 10px; 
+    -o-border-radius:10px 10px 10px 10px;
+     box-shadow:1px 1px 1px 1px;
+    -webkit-box-shadow:1px 1px 1px 1px;
+    -o-box-shadow:1px 1px 1px 1px;
+    -moz-box-shadow:1px 1px 1px 1px; 
+ } 
+ .text-center{
+  margin-top: 20px;   
+}
+.checkbox-inline{
+  margin-top: 10px;
+}
+ #logoEmpresa{
+    width: 80px;
+    height: 45px;
+ }
+#logoCDA{
+ width: 90px; 
+ height: 53px;
+ margin-left: 25px; 
+ margin-top: 5px;   
+}
+footer{
+    width: 100%;
+    height: 40px;
+    background: #003333;
+}
+footer p {
+    color: #fff;
+    padding-top: 10px;
+}

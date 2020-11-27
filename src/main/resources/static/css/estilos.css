@@ -1,0 +1,31 @@
+header{
+  background: #2c3e50;
+  color:#fff;
+}
+
+.main{
+  background: #f2f2f2;
+  
+}
+aside{
+  background: #c0392b; 
+  color:#fff;
+}
+footer{
+  background: #16a085;
+  color:#fff;
+}
+.modal-header{
+  background: #2c3e50; 
+  color:#fff;
+  height:40px;
+}
+.main{
+ margin-top: 20px;
+ margin-bottom: 20px;
+}
+.post{
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom:1px solid #23527c;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pre-Ingreso</title>
+        <link rel="icon" href="./img/favicon.ico">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Soltelec s.a.s">
+        <meta name="keywords" content="moto,carro,pesado,liviano,">
+        <link rel="stylesheet" href="./css/PreIngreso.css">
+        <link rel="stylesheet" href="./css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+    </head>
+    <body> 
+        <header class="navbar-header navbar-fixed-top" id="cabeceraPag">
+            <div class="pull-left">
+                <ul>
+                    <li><a href="#" >&nbsp;</a><i class="fa fa-mail-reply fa-2x" title="Retorno al Menu" onclick="menuPrincipal();"></i></li> 
+                </ul>
+            </div>
+            <div class="pull-left">
+                <ul>
+                    <li><a href="#"  data-toggle="modal">&nbsp;<i class="fa fa-save fa-2x" title="" onclick="registroPreIngreso();" ></i></a></li>
+                </ul>
+            </div>
+            <div class="pull-right">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="label"><a style="color:#DCDCDC;"  href="#" id="nombreUsuario"></a></li>
+                    <li><img class="img-circle img-responsive pull-right" src="./img/user.png" alt="./fonts/user.png" style="margin-right: 40px;height:50px;width:45px;margin-top:10px;"  id="fotoUsuario"></li>   
+                </ul>
+            </div> 
+        </header>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="ContenedorPrincipal">
+                    <div  class="col-xs-12 col-md-12 col-lg-12 cabecera" >
+                    <div id="placaRecepcion" class="pull-left"></div>                    
+                    <h4 class="text-center"><strong>DATOS GENERALES DE ADMISION</strong></h4></div>
+                    <form action="" id="frmDatosGenerales">
+                        <div class="row">
+                            <div class="form-group col-xs-2 col-sm-1 col-md-1">
+                                <label >TURNO:</label> <label style="text-align:center" id="turno"></label>
+                            </div>
+                            <div class="form-group col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                <label>KILOMETRAJE:</label><input class="form-control"  id="kilometraje" type="text" placeholder="KILOMETRAJE">
+                            </div>
+                            <div class="form-group col-xs-6 col-sm-2 col-md-1 col-lg-1">
+                                <label>EXOSTOS:</label><input class="form-control"  id="exostos" type="text" value="1" placeholder="Nro.Exostos">
+                            </div>
+
+                            <div class="form-group col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                <label>GESTOR:</label><input class="form-control"  id="gestores" type="text" placeholder="Nro. Gestor" value="0">
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 form-group">
+                                <label>EMPRESA:</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-search" id="imgimput"></i></span>
+                                    <input id="empresa" type="text" class="form-control" placeholder="Empresa" value="0">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+                        </div>
+                    </form>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 cabecera" ><h4 class="text-center"><strong>ELEMENTOS DECLARADOS POR EL CLIENTE</strong></h4></div>
+                    <form action="" id="gato">
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                            <ul class="radio-inline">
+                                <li>
+                                    <h2>El vehiculo tiene gato como respuesto&nbsp;&nbsp;</h2>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <h2><label class="radio-inline"><input  type="radio" name="poseeGato" value="true" checked>&nbsp;SI</label>
+                                <label class="radio-inline"><input  type="radio" name="poseeGato" value="false" >&nbsp;NO</label>
+                            </h2>
+                        </div>
+                    </form>
+                    <form action="" id="cajaRepuesto">
+                    
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                            <ul class="radio-inline">
+                                <li>
+                                    <h2>El vehiculo tiene caja de respuesto&nbsp;</h2>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <h2><label class="radio-inline"><input type="radio" name="cajaRepuesto" value="true" checked>&nbsp;SI</label>
+                                <label class="radio-inline"><input type="radio" name="cajaRepuesto" value="false">&nbsp;NO</label>
+                            </h2>
+                        </div>
+                    </form>
+                    <form action="" id="equipoSonido">
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                            <ul class="radio-inline">
+                                <li>
+                                    <h2>El vehiculo tiene equipo de sonido&nbsp;</h2>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            <h2><label class="radio-inline"><input type="radio" name="equipoSonido" value="true" checked>&nbsp;SI</label>
+                                <label class="radio-inline"><input type="radio" name="equipoSonido" value="false">&nbsp;NO</label>
+                            </h2>  
+                        </div>
+                    </form>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="form-group">
+                            <h2><label for="textEditablePreIngreso">Otros:</label></h2>
+                            <textarea class="form-control small text-uppercase" id="otrosRegLegalizacion" rows="2"></textarea>
+                        </div>
+                    </div>               
+                   
+                    <br><br>
+                    <div class="col-xs-12 col-md-12 col-lg-12"></div>
+                </div> 
+            </div>
+        <!--<footer class="navbar navbar-fixed-bottom">
+            <span class="pull-left"><img id="logoEmpresa" src="./img/Soltelec.png" alt="" class="img-rounded" style="width:90px;height:53px;margin-left:25px;margin-top:5px;"/></span>
+            <p class="text-center">@2007 copyringht  Soltelec sas </p> 
+        </footer>-->        
+        <script src="./js/AHAHlib2.js"></script>	
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/eModal.min.js"></script>      
+        <script src="./js/bootstrap.min.js"></script>      
+        <script src="./js/preIngreso.js"></script>
+    </body>
+</html>

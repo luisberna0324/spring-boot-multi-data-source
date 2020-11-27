@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>MODULO DEL SART-WEB</title>
+        <link rel="icon" href="./img/favicon.ico">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/bootstrap.css">        
+        <link rel="stylesheet" href="./css/SARTModuloFoto.css">
+        <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+    </head>
+    <body>
+        <header class="navbar-header navbar-fixed-top" id="cabeceraPag">
+            <div class="pull-right">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="label"><a href="#"></a>
+                        <div style="color: #DCDCDC;" class="test-name" id="nombreUsuario"></div>
+                    </li>
+                    <li><img id="fotoUsuario" class="img-circle img-responsive pull-right" src="./img/user.png" alt="./fonts/user.png" style="margin-right: 40px; height: 50px; width: 45px; margin-top: 10px;">
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-center">
+                    <strong>MODULO FOTOS</strong>
+                </h4>
+            </div>
+            <div style="cursor:pointer;"class="pull-left reply" id="" onclick="menuPrincipal();"><i class="fa fa-2x fa-mail-reply"></i></div>
+        </header>
+        <div class="container">		
+            <fieldset>
+                <hr>
+                <div class="row">
+                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                        <table class="table-responsive table-condensed" border="1" width="65%">
+                            <tr>
+                                <th id="nroPlaca" style="background-color: #ffffff;"></th>
+                                <th id="nroTurno" style="background-color: #ffffff;"></th>
+                                <th id="condicion" style="background-color: #ffffff;"></th>
+                                <th id="TIPO" style="background-color: #ffffff;"></th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 pull-left">
+                        <span class="glyphicon glyphicon-camera" title="" onclick="showCamara();"></span>&nbsp;
+                        <span class="glyphicon glyphicon-transfer" title="" onclick="changeCamaras();"></span>&nbsp;
+                        <span class="glyphicon glyphicon-send" onclick="trasmitirFotos();"></span>
+                    </div>
+                </div>
+            </fieldset>
+            <br>
+            <div class="row">
+                <div id="fondo1" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <h1><strong>DELANTERA</strong></h1>
+                    <div id="capaFoto1"  class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                            <canvas id="canvas1" width="520" height="440"> </canvas>
+                        </div>
+                    </div>              
+                    <div id="capaCamara1" style="display: none;"  class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <video style=""  id="video1" width="520px" height="440px" onclick="showCamara()"> </video>
+                        </div>
+                    </div>
+                </div>
+                <div id="fondo2" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <h1 ><strong>TRASERA</strong></h1>
+                    <div id="capaFoto2"  class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                            <canvas id="canvas2" width="520" height="440"> </canvas>
+                        </div>
+                    </div>
+                    <div id="capaCamara2" style="display:none "  class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <video id="video2" width="520" height="440" onclick="showCamara()"> </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>	
+        <br><br>
+        <form id="frmUploadPicture" method="post" enctype="multipart/form-data"></form>
+        <input type="hidden" id="nroPrueba" value=""> 
+        <input type="hidden" id="fkUsuario" value="">
+        <footer class="navbar navbar-fixed-bottom">
+            <span class="pull-left"><img id="#" src="" alt="" class="img-rou</div>nded" /></span>
+            <img id="logoEmpresa"  class="img-rounded img-responsive pull-left" src="./img/logoCDA.JPG" alt="./img/favicon.png" style="height: 80px; width: 80px;">
+            <p class="text-center">Copyright<i class="fa fa-copyright"></i>2018 Soltelec sas </p>
+        </footer>
+        <input type="hidden" id="identificador" value="" required>
+        <script src="./js/AHAHlib2.js"></script>
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/eModal.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/ie10-viewport-bug-workaround.js"></script>
+        <script src="./js/SARTModuloFoto.js"></script>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+/* 
+    Created on : Oct 14, 2018, 8:38:37 AM
+    Author     : Software Soltelec s.a.s
+*/
+
+ body{
+ width: 100%;
+ height: 1200px;
+ }
+header{
+    width:100%;
+    background: #003333;
+    height:50px;   
+}
+i{
+ color:#FFF;
+ margin-top:5px;     
+}
+header h4{
+ color:#FFF; 
+} 
+#ContenedorPrincipal{
+   width: 85%;
+   height: 500px;
+   margin-top: 85px;
+   margin-left: 65px;
+   background: #FFF;
+   border-radius:1px 1px 1px 1px;
+   box-shadow:2px 1px 10px 2px #333333;
+} 
+ #placaRecepcion{
+    width:70px;
+    height:47px;    
+    position: relative;
+    font-weight:bold;
+   font-size:20px;
+   padding:10px;
+}
+.espacio{
+    width: 100px;
+    background:#DCDCDC; 
+}
+#cabeceraPag{
+   background: #e3e3e3;
+   border-bottom: #DCDCDC;
+}
+table{
+    margin-top: 30px;   
+}
+table th{
+   background: #DCDCDC;
+}
+button{
+    padding-top: 20px;
+}
+p{
+    padding-top: 20px;
+    color: #ccc;
+}
+footer{
+    width: 100%;
+    background: #003333;
+}
